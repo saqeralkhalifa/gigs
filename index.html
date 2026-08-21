@@ -680,7 +680,8 @@ a{color:var(--accent);}
 .mc-nav-inner{gap:20px;}
 .mc-nav-links{font-family:var(--font-body); font-size:15.5px; letter-spacing:0; gap:18px; flex:0 1 auto;}
 .mc-brand{gap:12px; flex:0 0 auto;}
-@media (max-width:1200px){ .mc-brand span{display:none;} }
+@media (max-width:1560px){ .mc-brand span{display:none;} }
+@media (max-width:1360px){ .mc-site{display:none;} }
 .mc-nav-links a{color:var(--on-band-link); border-bottom:1px solid transparent;}
 .mc-nav-links a:hover{color:var(--on-band);}
 .mc-nav-links a[aria-current="page"]{color:var(--gold); border-bottom-color:var(--gold);}
@@ -729,7 +730,7 @@ a{color:var(--accent);}
 .chip{background:transparent; border-color:var(--line-2); color:var(--ink); font-size:16px; font-family:var(--font-body);}
 [dir="rtl"] .chip{font-family:var(--font-ar);}
 .chip:hover{border-color:var(--band); color:var(--band);}
-.chip.on{background:var(--band); border-color:var(--band); color:var(--on-band);}
+.chip.on{background:var(--band) !important; border-color:var(--band) !important; color:var(--on-band) !important;}
 .count{font-size:13px; color:var(--ink-3); border-top:1px solid var(--line); padding-top:16px; letter-spacing:.04em;}
 
 /* ---- listings as ledger blocks ---- */
@@ -805,7 +806,8 @@ a{color:var(--accent);}
 .btn:hover{background:var(--royal); border-color:var(--royal); color:var(--on-band);}
 .btn.ghost, .btn.secondary{background:transparent; color:var(--band); border:1px solid var(--band);}
 .btn.ghost:hover, .btn.secondary:hover{background:var(--band); color:var(--on-band);}
-.btn.apply{background:var(--band); color:var(--on-band); border:1px solid var(--band); font-family:var(--font-body);}
+.btn.apply{background:var(--band); color:var(--on-band); border:1px solid var(--band); font-family:var(--font-body); text-transform:none; letter-spacing:0; font-size:17px; font-weight:500;}
+[dir="rtl"] .btn.apply, [dir="rtl"] .btn{font-family:var(--font-ar);}
 .btn.apply:hover{background:var(--royal); border-color:var(--royal); color:var(--on-band);}
 .btn.apply.mail{background:transparent; color:var(--band); border-color:var(--band);}
 .btn.apply.mail:hover{background:var(--band); color:var(--on-band);}

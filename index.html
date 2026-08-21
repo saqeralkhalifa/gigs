@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gig Opportunities in Bahrain, short jobs and flexible work</title>
+<meta name="description" content="A free noticeboard for gigs, part-time shifts, freelance tasks and temporary roles in Bahrain. Companies post for free, applicants apply for free, and every posting is checked by a person. In Arabic and English, by Dr. Saqer AlKhalifa.">
+<script>window.goatcounter = {path: function(p){ return "/gigs" + p; }};</script>
+<script data-goatcounter="https://majorcompass.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="alternate" hreflang="en" href="https://gigs.saqeralkhalifa.com/?lang=en">
+<link rel="alternate" hreflang="ar" href="https://gigs.saqeralkhalifa.com/?lang=ar">
+<link rel="alternate" hreflang="x-default" href="https://gigs.saqeralkhalifa.com/">
+<script>
+/* MCLANG: one language resolver shared across Dr. Saqer AlKhalifa's tools. */
+function mcInitLang(){
+  try{
+    var q = (location.search.match(/[?&]lang=(ar|en)\b/) || [])[1];
+    if(q) return q;
+    var s = window.localStorage && localStorage.getItem("mc-lang");
+    if(s === "ar" || s === "en") return s;
+    var n = (navigator.languages && navigator.languages[0]) || navigator.language || "";
+    if(/^ar/i.test(n)) return "ar";
+  }catch(e){}
+  return "en";
+}
+function mcSaveLang(v){ try{ localStorage.setItem("mc-lang", v); }catch(e){} }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{line-height:1.8; min-height:100vh;}
+  .wrap{max-width:860px; margin:0 auto; padding:0 22px 80px;}
+  .serif{font-family:Georgia,'Times New Roman',serif;}
+
+  header.site{display:flex; align-items:center; justify-content:space-between;
+    padding:18px 0 14px; border-bottom:1px solid var(--line);}
+  .brand{font-size:.95rem; color:var(--ink-2); text-decoration:none;}
+  .lang-toggle{border:1px solid var(--line); background:var(--card); border-radius:999px;
+    padding:7px 16px; font-size:.95rem; cursor:pointer; color:var(--accent); font-weight:600; font-family:inherit;}
+
+  .hero{text-align:center; padding:44px 0 6px;}
+  .kicker{font-size:.8rem; letter-spacing:.16em; text-transform:uppercase; font-weight:800; margin-bottom:12px;}
+  .hero h1{font-size:2.2rem; line-height:1.28; margin-bottom:12px;}
+  .hero p.sub{color:var(--ink-2); font-size:1.1rem; max-width:680px; margin:0 auto;}
+
+  .lede{font-size:1.06rem; line-height:1.8; color:var(--ink); margin:32px 0 6px;
+    padding:22px 26px; background:var(--card); border:1px solid var(--line);}
+
+  .chap{margin-top:44px; padding-top:26px; border-top:2px solid var(--line);}
+  .chap h2{font-size:1.5rem; line-height:1.3; margin-bottom:8px;}
+  .chap p.sub{color:var(--ink-2); margin-bottom:16px;}
+  .pt{background:var(--card); border:1px solid var(--line); padding:18px 22px; margin-bottom:10px;}
+  .pt b{display:block; font-size:1.02rem; margin-bottom:5px;}
+  .pt span{color:var(--ink-2); font-size:.97rem; line-height:1.8; display:block;}
+
+  /* ---- pickers ---- */
+  .controls{margin-top:40px; padding-top:24px; border-top:2px solid var(--line);}
+  .controls h2{font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3);
+    font-weight:700; margin:0 0 8px;}
+  .chips{display:flex; gap:7px; flex-wrap:wrap; margin-bottom:16px;}
+  .chip{border:1px solid var(--line-2); background:var(--card); color:var(--ink-2);
+    padding:8px 14px; font-size:.9rem; font-weight:500; cursor:pointer; font-family:inherit;}
+  .count{font-size:.85rem; color:var(--ink-3); margin-bottom:12px;}
+
+  /* ---- route cards ---- */
+  .rt{background:var(--card); border:1px solid var(--line); padding:20px 24px; margin-bottom:12px;}
+  .rh{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:8px;}
+  .rh b{font-size:1.12rem; flex:1; min-width:200px;}
+  .tag{font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; font-weight:700;
+    padding:4px 9px; border:1px solid var(--line-2); color:var(--ink-3); white-space:nowrap;}
+  .tag.all{color:var(--good); border-color:var(--good-line); background:var(--good-soft);}
+  .tag.nationals{color:var(--bad); border-color:var(--bad-line); background:var(--bad-soft);}
+  .tag.mixed{color:var(--warn); border-color:var(--warn-line); background:var(--warn-soft);}
+  .tag.degree{color:var(--ink-3);}
+  .rt p{color:var(--ink-2); font-size:.99rem; line-height:1.8;}
+  .meta{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px; padding-top:12px;
+    border-top:1px dashed var(--line);}
+  .meta div{font-size:.92rem; color:var(--ink-2); line-height:1.7;}
+  .ml, .wl{display:block; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--accent); font-weight:700; margin-bottom:3px;}
+  @media(max-width:640px){ .meta{grid-template-columns:1fr;} }
+  .wh{margin-top:14px; padding:14px 16px; background:var(--paper-2); border:1px solid var(--line);
+    font-size:.93rem; color:var(--ink-2); line-height:1.8;}
+  .wall{margin-top:6px;}
+  .wrow{display:grid; grid-template-columns:132px 1fr; gap:12px; padding:9px 0;
+    border-top:1px dashed var(--line);}
+  .wrow:first-child{border-top:0; padding-top:2px;}
+  .wrow .wc{font-weight:600; color:var(--ink); font-size:.86rem; line-height:1.75;}
+  .wrow .wt{font-size:.92rem; line-height:1.75;}
+  .wrow.empty .wt{color:var(--ink-3);}
+  @media(max-width:640px){ .wrow{grid-template-columns:1fr; gap:2px;} }
+  .note{margin-top:10px; font-size:.88rem; color:var(--ink-3); line-height:1.7;}
+
+  .gaps{margin-top:18px; padding:20px 24px; background:var(--warn-soft); border:1px solid var(--warn-line);}
+  .gaps h2{font-size:1.02rem; margin-bottom:8px;}
+  .gaps ul{padding-inline-start:20px;}
+  .gaps li{font-size:.93rem; color:var(--ink-2); margin-bottom:8px; line-height:1.75;}
+
+  .bar{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    background:var(--card); border:1px solid var(--line); padding:18px 22px; margin-top:12px;}
+  .bar p{color:var(--ink-2); font-size:.98rem; flex:1; min-width:230px;}
+  .btn{display:inline-block; background:var(--navy); color:#fff; text-decoration:none;
+    padding:11px 22px; font-weight:600; font-size:.95rem; white-space:nowrap;}
+  .btn.ghost{background:transparent; color:var(--accent); border:1px solid var(--accent-line);}
+
+  .srcbox{margin-top:40px; padding:22px 24px; background:var(--card); border:1px solid var(--line);}
+  .srcbox h2{font-size:1.05rem; margin-bottom:4px;}
+  .srcbox p.sub{font-size:.9rem; color:var(--ink-3); margin-bottom:12px;}
+  .srcbox ol{padding-inline-start:20px;}
+  .srcbox li{font-size:.88rem; color:var(--ink-2); margin-bottom:8px; line-height:1.7;}
+  .srcbox a{color:var(--accent); word-break:break-word;}
+
+  footer.site{margin-top:38px; padding-top:20px; border-top:1px solid var(--line);
+    font-size:.9rem; color:var(--ink-3); text-align:center;}
+  .disc{margin-bottom:8px;}
+/* ============================================================
+   Major Compass shared theme, option 2A
+   Ink and paper editorial, Newsreader display, brass accent.
+   Tokens mirror theme.css from the design handoff.
+   Square corners everywhere except the language pill.
+   No shadows, no gradients, no icons.
+   ============================================================ */
+:root{
+  --font-display:Newsreader, Georgia, 'Times New Roman', serif;
+  --font-body:'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --font-ar:'IBM Plex Sans Arabic', 'IBM Plex Sans', 'Segoe UI', Tahoma, Arial, sans-serif;
+
+  --paper:#f6f3ec;
+  --paper-2:#efece4;
+  --card:#fbf9f4;
+  --line:#ddd7cb;
+  --line-2:#cfc9bd;
+
+  --ink:#14161a;
+  --ink-2:#33363c;
+  --ink-3:#6b6e74;
+
+  --navy:#14161a;
+  --navy-deep:#8a5a1e;
+  --accent:#8a5a1e;
+  --accent-soft:#efece4;
+  --accent-line:#cfc9bd;
+
+  --gold:#8a5a1e;
+  --gold-soft:#f0ebdf;
+  --gold-line:#ddd7cb;
+  --gold-bright:#d8b98a;
+
+  --good:#3f6b4f;  --good-soft:#eaefe9;  --good-line:#cfdbd0;
+  --warn:#8a5a1e;  --warn-soft:#f0ebdf;  --warn-line:#e2d9c6;
+  --bad:#8c3a30;   --bad-soft:#f4e9e5;   --bad-line:#e2cfc8;
+
+  --radius:0; --radius-sm:0;
+  --shadow:none; --shadow-lift:none;
+}
+
+body{
+  font-family:var(--font-body);
+  background:var(--paper);
+  color:var(--ink);
+  font-size:16px;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+[dir="rtl"] body{font-family:var(--font-ar); line-height:1.95;}
+body::before{display:none !important;}
+
+/* ---------- display type: Newsreader 400, never bold serif ---------- */
+.serif, .chap h2, .cn, .stat-n, .minrow b, .grp-t, .grp h2, .panel h2,
+.srcbox h2, .majors-title, .hero h1, h1, h2, h3{
+  font-family:var(--font-display);
+  font-weight:400;
+  font-variation-settings:normal;
+  letter-spacing:-.02em;
+}
+[dir="rtl"] .serif, [dir="rtl"] .chap h2, [dir="rtl"] .cn, [dir="rtl"] .stat-n,
+[dir="rtl"] .minrow b, [dir="rtl"] .grp-t, [dir="rtl"] .grp h2, [dir="rtl"] .panel h2,
+[dir="rtl"] .srcbox h2, [dir="rtl"] .majors-title, [dir="rtl"] .hero h1,
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3{
+  font-family:var(--font-ar); letter-spacing:0; font-weight:600; line-height:1.35;
+}
+.stat-n, .minrow b, .cnt, td, th, .cal-row b{font-variant-numeric:tabular-nums;}
+::selection{background:var(--paper-2); color:var(--ink);}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+a:focus-visible, button:focus-visible, input:focus-visible{
+  outline:2px solid var(--accent); outline-offset:2px; border-radius:0;
+}
+
+/* ---------- the shared dark nav ---------- */
+.mc-nav{
+  background:var(--ink); color:var(--paper);
+  position:sticky; top:0; z-index:40;
+}
+.mc-nav-inner{
+  max-width:920px; margin:0 auto; padding:13px 22px;
+  display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;
+}
+.mc-brand{display:flex; align-items:baseline; gap:10px; text-decoration:none; color:var(--paper); min-width:0;}
+.mc-brand b{font-family:var(--font-display); font-size:17px; font-weight:400; letter-spacing:-.01em; white-space:nowrap;}
+[dir="rtl"] .mc-brand b{font-family:var(--font-ar); font-weight:600; letter-spacing:0;}
+.mc-brand span{font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#9a9da3; white-space:nowrap;}
+[dir="rtl"] .mc-brand span{letter-spacing:0; text-transform:none; font-size:12px;}
+.mc-nav-links{
+  display:flex; gap:20px; font-size:12px; letter-spacing:.06em; align-items:center;
+  overflow-x:auto; scrollbar-width:none; flex:1 1 auto; justify-content:center;
+}
+.mc-nav-links::-webkit-scrollbar{display:none;}
+[dir="rtl"] .mc-nav-links{letter-spacing:0; font-size:13px;}
+.mc-nav-links a{
+  color:#c9ccd2; text-decoration:none; white-space:nowrap; padding-bottom:2px;
+  border-bottom:1px solid transparent; transition:color .15s, border-color .15s;
+}
+.mc-nav-links a:hover{color:var(--paper);}
+.mc-nav-links a[aria-current="page"]{color:var(--paper); border-bottom-color:var(--accent);}
+.mc-nav .lang-toggle{
+  flex:0 0 auto; border:1px solid var(--accent); background:var(--accent); border-radius:999px;
+  padding:6px 17px; font-size:13px; letter-spacing:.04em; font-weight:600;
+  color:#fbf9f4; cursor:pointer; font-family:var(--font-body);
+  transition:background .15s, color .15s, border-color .15s;
+}
+.mc-nav .lang-toggle:hover{background:var(--paper); color:var(--ink); border-color:var(--paper);}
+@media (max-width:640px){
+  .mc-nav-inner{padding:11px 18px; gap:10px;}
+  .mc-nav-links{justify-content:flex-start; order:3; width:100%; gap:16px; padding-bottom:2px;}
+}
+@media print{ .mc-nav{display:none;} }
+
+/* the old in-page masthead and pill switcher are replaced by .mc-nav */
+header.site, nav.toolnav{display:none !important;}
+
+/* ---------- page header ---------- */
+.hero, .res-head{position:relative;}
+.hero::before{display:none !important;}
+.hero{padding-top:52px;}
+.hero h1{font-size:clamp(34px, 5.4vw, 52px); line-height:1.04; font-weight:400;}
+[dir="rtl"] .hero h1{line-height:1.35; font-weight:600;}
+.hero p, .hero p.sub{color:var(--ink-2);}
+.kicker, .eyebrow{
+  color:var(--accent); font-weight:600; font-size:11px;
+  letter-spacing:.18em; text-transform:uppercase;
+}
+[dir="rtl"] .kicker, [dir="rtl"] .eyebrow{letter-spacing:0; text-transform:none; font-size:13px;}
+
+/* ---------- surfaces: square, flat, ruled ---------- */
+.panel, .mcard, .pcard, .qcard, .viz-root, .srcbox, .toc, .lede, .stat, .nextbox,
+.m, .fact, .pt, .bar, .quizbar, .cta-inline, .rule, .checked, .hedge, .extra, .flag,
+.note, .card, .grp{
+  border-radius:0 !important;
+  box-shadow:none !important;
+}
+.panel, .mcard, .pcard, .qcard, .viz-root, .srcbox, .toc, .stat, .nextbox, .m, .fact{
+  background:var(--card); border:1px solid var(--line-2);
+}
+.mcard:hover, .pcard:hover, .m:hover{border-color:var(--ink-3);}
+.pcard{border-inline-start-width:2px; border-inline-start-color:var(--accent);}
+.lede{background:var(--card); border:1px solid var(--line-2);
+  border-inline-start:2px solid var(--accent) !important; border-inline-end:1px solid var(--line-2) !important;}
+
+/* ---------- buttons ---------- */
+.btn{
+  background:var(--ink); border:1px solid var(--ink); border-radius:0;
+  font-weight:500; letter-spacing:0; color:var(--paper); box-shadow:none;
+  transition:background .15s, border-color .15s, color .15s;
+}
+.btn:hover{background:var(--accent); border-color:var(--accent); color:#fff; transform:none; filter:none; box-shadow:none;}
+.btn.ghost, .btn.secondary{
+  background:transparent; color:var(--ink); border:1px solid var(--ink); box-shadow:none;
+}
+.btn.ghost:hover, .btn.secondary:hover{background:var(--ink); border-color:var(--ink); color:var(--paper);}
+.printbtn{border:1px solid var(--line-2); border-radius:0; background:transparent; color:var(--ink-2);}
+.printbtn:hover{background:var(--ink); border-color:var(--ink); color:var(--paper);}
+
+/* filter chips and pickers: square, ruled */
+.fbtn, .chip, .navbtn, .picker button, .filters button{
+  border:1px solid var(--line-2); border-radius:0; background:transparent; color:var(--ink-2);
+  box-shadow:none; transition:background .15s, color .15s, border-color .15s;
+}
+.fbtn:hover, .chip:hover, .navbtn:hover{border-color:var(--ink); color:var(--ink); background:transparent; transform:none;}
+.fbtn.on, .chip.on, .navbtn.on{
+  background:var(--ink); border-color:var(--ink); color:var(--paper); font-weight:500; box-shadow:none;
+}
+input[type="text"], input[type="search"], select, textarea, .srch{
+  border-radius:0 !important; border:1px solid var(--line-2); background:var(--card);
+  font-family:var(--font-body); color:var(--ink);
+}
+[dir="rtl"] input, [dir="rtl"] select, [dir="rtl"] textarea{font-family:var(--font-ar);}
+
+/* ---------- bars and callouts: flat bands, no gradients ---------- */
+.bar, .quizbar, .cta-inline{
+  background:var(--paper-2); border:1px solid var(--line); border-radius:0;
+}
+.rule, .checked, .hedge, .extra, .flag{border-radius:0;}
+.rule.w, .checked, .hedge, .extra, .flag{background:var(--warn-soft); border-color:var(--warn-line);}
+.rule.b{background:var(--bad-soft); border-color:var(--bad-line);}
+.rule.n{background:var(--paper-2); border-color:var(--line);}
+.row.act{background:var(--paper-2) !important; border-color:var(--line) !important;}
+
+/* ---------- band chips and verdict pills keep meaning, lose gloss ---------- */
+.band{border-radius:0; font-weight:600;}
+
+/* ---------- section labels ---------- */
+.sec h3, .lbl, .toc h2, .row h4{
+  letter-spacing:.14em; font-weight:600; text-transform:uppercase; font-size:11px; color:var(--ink-3);
+}
+[dir="rtl"] .sec h3, [dir="rtl"] .lbl, [dir="rtl"] .toc h2, [dir="rtl"] .row h4{
+  letter-spacing:0; text-transform:none; font-size:13px;
+}
+
+/* ---------- tables ---------- */
+table{border-collapse:collapse;}
+th{
+  text-align:start; font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--ink-3); font-weight:600; padding:12px 14px; border-bottom:1px solid var(--ink);
+}
+[dir="rtl"] th{letter-spacing:0; text-transform:none; font-size:13px;}
+td{padding:14px; border-bottom:1px solid var(--line); color:var(--ink-2); vertical-align:top; font-size:14px;}
+
+/* ---------- footer ---------- */
+footer.site{
+  margin-top:56px; padding:26px 0 0; border-top:1px solid var(--line); color:var(--ink-3); font-size:13px;
+}
+footer.site a{color:var(--accent); font-weight:500;}
+
+
+/* ---- 2A refinements ---- */
+input, button, select, textarea{border-radius:0;}
+.lang-toggle, .mc-nav .lang-toggle{border-radius:999px;}
+.pt{border-inline-start-width:2px !important;}
+.compass, .emoji{display:none !important;}
+.opt{border-radius:0 !important;}
+.opt.selected{background:var(--paper-2); border-color:var(--ink);}
+.band{border-radius:0 !important;}
+hr{border:0; border-top:1px solid var(--line);}
+
+/* ---- 2A: square the remaining pills, protect quiz progress ---- */
+.section-chip, .progress-bar, .progress-fill, .bar-fill, .chip, .meta-chips .chip,
+.tag, .pill, .badge, .cta, .startbtn{border-radius:0 !important;}
+.section-chip{background:var(--paper-2); color:var(--accent); border:1px solid var(--line);
+  font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:600; padding:5px 12px;}
+[dir="rtl"] .section-chip{letter-spacing:0; text-transform:none; font-size:13px;}
+body:has(#screen-quiz.active) .mc-nav-links{display:none;}
+
+/* ---- 2A: square corners everywhere except the language pill ---- */
+.wrap, .wrap *, .mc-nav *:not(.lang-toggle){border-radius:0 !important;}
+.lang-toggle{border-radius:999px !important;}
+.subj, .tag, .chip{
+  background:transparent !important; border:1px solid var(--line-2) !important;
+  color:var(--ink-2) !important; font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  padding:4px 9px !important; font-weight:500;
+}
+[dir="rtl"] .subj, [dir="rtl"] .tag, [dir="rtl"] .chip{letter-spacing:0; text-transform:none; font-size:13px;}
+.mrank{
+  background:transparent !important; border:0 !important; width:auto !important; height:auto !important;
+  font-family:var(--font-display); font-size:22px; font-weight:400; color:var(--accent) !important;
+  box-shadow:none !important; min-width:28px;
+}
+[dir="rtl"] .mrank{font-family:var(--font-ar); font-weight:600;}
+html{scroll-padding-top:76px;}
+.wrap [id], .m, .mcard{scroll-margin-top:76px;}
+
+@media (max-width:520px){
+  .hero h1{font-size:clamp(28px, 8vw, 36px);}
+}
+
+/* ---- nav: links back to the main site and the book ---- */
+.mc-nav-inner{max-width:1160px !important; gap:14px; flex-wrap:nowrap;}
+.mc-nav-links{gap:17px; justify-content:center; min-width:0;}
+@media (max-width:1100px){ .mc-brand span{display:none;} }
+@media (max-width:760px){
+  .mc-nav-inner{flex-wrap:wrap;}
+  .mc-nav-links{order:3; width:100%; justify-content:flex-start;}
+}
+.mc-nav-right{display:flex; align-items:center; gap:14px; flex:0 0 auto;}
+.mc-site{
+  color:#9a9da3; text-decoration:none; font-size:12px; letter-spacing:.06em; white-space:nowrap;
+  border-bottom:1px solid transparent; padding-bottom:2px; transition:color .15s, border-color .15s;
+}
+.mc-site:hover{color:var(--paper); border-bottom-color:#3a3d43;}
+[dir="rtl"] .mc-site{letter-spacing:0; font-size:13px;}
+.mc-book{
+  color:#d8b98a; text-decoration:none; font-size:12px; letter-spacing:.06em; white-space:nowrap;
+  border:1px solid rgba(216,185,138,.45); padding:6px 13px; transition:background .15s, color .15s, border-color .15s;
+}
+.mc-book:hover{background:#d8b98a; color:var(--ink); border-color:#d8b98a;}
+[dir="rtl"] .mc-book{letter-spacing:0; font-size:13px;}
+@media (max-width:860px){ .mc-site{display:none;} }
+@media (max-width:640px){
+  .mc-nav-right{gap:9px;}
+  .mc-book{padding:5px 10px;}
+}
+</style>
+
+<style>
+/* ---------- Internship Opportunities ---------- */
+.mc-nav-links{justify-content:flex-start;}
+.keybox{background:var(--card); border-block:1px solid var(--line); padding:30px 26px; margin:34px 0 8px;}
+.keybox h2{font-size:1.42rem; line-height:1.45; color:var(--ink); margin-bottom:12px;}
+.keybox p{font-size:1rem; line-height:1.85; color:var(--body);}
+
+.matcher{background:var(--ink); color:var(--paper); padding:34px 28px; margin-top:34px;}
+.matcher h2{color:var(--paper); font-size:1.42rem; line-height:1.42;}
+.matcher p{color:#c9ccd2; font-size:.98rem; line-height:1.8; margin-top:12px;}
+.matcher .chips{margin-top:20px;}
+.matcher .chip{background:transparent; color:#e8e6e1; border-color:#4a4d53;}
+.matcher .chip:hover{border-color:var(--accent); color:#fff;}
+.matcher .chip.on{background:var(--paper); color:var(--ink); border-color:var(--paper);}
+.matcher .hint{margin-top:16px; font-size:.9rem; color:#9a9da3;}
+.matcher a{color:var(--accent);}
+
+.ctrow{margin-top:28px;}
+.ctrow h3, .fgroup h3{font-size:.74rem; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--muted); margin-bottom:11px; font-weight:600;}
+[dir="rtl"] .ctrow h3, [dir="rtl"] .fgroup h3{letter-spacing:0; font-size:.86rem;}
+.chips{display:flex; flex-wrap:wrap; gap:8px;}
+.chip{border:1px solid var(--line); background:var(--card); color:var(--body);
+  padding:7px 14px; font-size:.9rem; cursor:pointer; font-family:inherit; line-height:1.5;
+  text-transform:none; letter-spacing:normal; border-radius:0;}
+.chip:hover{border-color:var(--accent);}
+.chip.on{background:var(--ink); color:var(--paper); border-color:var(--ink);}
+.chip.soon{opacity:.5; cursor:not-allowed;}
+.chip.soon:hover{border-color:var(--line);}
+.fgroup{margin-top:17px;}
+.count{margin-top:20px; font-size:.94rem; color:var(--muted);}
+
+.sread{background:var(--band); border-inline-start:3px solid var(--accent); padding:24px 26px; margin-top:22px;}
+.sread h3{font-size:1.06rem; color:var(--ink); margin-bottom:14px;}
+.sread dl{display:grid; grid-template-columns:130px 1fr; gap:9px 18px;}
+.sread dt{font-size:.76rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); font-weight:600; padding-top:3px;}
+[dir="rtl"] .sread dt{letter-spacing:0; font-size:.88rem;}
+.sread dd{font-size:.96rem; line-height:1.78; color:var(--body);}
+
+.opp{border-top:1px solid var(--line); padding:26px 0;}
+.opp:first-child{border-top:0;}
+.otop{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 14px;}
+.oorg{font-size:1.24rem; font-weight:600; color:var(--ink); line-height:1.4;}
+.oprog{font-size:1.02rem; color:var(--sec); line-height:1.5;}
+.tag{font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; font-weight:600;
+  padding:4px 10px; border:1px solid var(--line); color:var(--muted); white-space:nowrap;}
+[dir="rtl"] .tag{letter-spacing:0; font-size:.8rem;}
+.tag.open{border-color:var(--accent); color:var(--accent);}
+.orows{margin-top:15px; display:grid; grid-template-columns:150px 1fr; gap:7px 18px;}
+.orows dt{font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); font-weight:600; padding-top:3px;}
+[dir="rtl"] .orows dt{letter-spacing:0; font-size:.9rem;}
+.orows dd{font-size:.98rem; line-height:1.75; color:var(--body);}
+.olink{display:inline-block; margin-top:15px; font-size:.95rem; font-weight:600;
+  color:var(--accent); border-bottom:1px solid var(--accent-line); text-decoration:none;}
+.ometa{margin-top:11px; font-size:.82rem; color:var(--muted);}
+.empty{padding:34px 0; color:var(--muted); font-size:1rem;}
+
+.ev{border-top:1px solid var(--line); padding:24px 0;}
+.ev:first-of-type{border-top:0;}
+.evclaim{font-size:1.06rem; line-height:1.7; color:var(--ink); font-weight:500;}
+.evsrc{margin-top:10px; font-size:.88rem; color:var(--muted); line-height:1.7;}
+.evnote{margin-top:12px; font-size:.93rem; line-height:1.75; color:var(--body);
+  background:var(--band); padding:14px 16px;}
+.evtag{display:inline-block; font-size:.68rem; letter-spacing:.12em; text-transform:uppercase;
+  font-weight:600; padding:3px 9px; border:1px solid var(--line); color:var(--muted); margin-bottom:10px;}
+[dir="rtl"] .evtag{letter-spacing:0; font-size:.78rem;}
+.evtag.causal{border-color:var(--accent); color:var(--accent);}
+.evtag.contested, .evtag.gap{border-color:#9a5f3a; color:#9a5f3a;}
+.evlink{font-size:.88rem; color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-line);}
+
+.subbox{background:var(--ink); color:var(--paper); padding:36px 30px; margin-top:46px;}
+.subbox h2{color:var(--paper); font-size:1.5rem; line-height:1.4;}
+.subbox p{color:#c9ccd2; font-size:1rem; line-height:1.8; margin-top:14px;}
+.subbox .btn{margin-top:22px; background:var(--paper); color:var(--ink); border-color:var(--paper);}
+.subbox .btn:hover{background:var(--accent); color:var(--paper); border-color:var(--accent);}
+
+.mcbox{margin-top:46px; border-top:1px solid var(--line); padding-top:30px;}
+.mcbox h2{font-size:1.3rem; color:var(--ink);}
+.mcbox p.sub{margin-top:10px;}
+.mcgrid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:22px;}
+.mccard{border:1px solid var(--line); padding:20px 20px; background:var(--card); text-decoration:none; display:block;}
+.mccard:hover{border-color:var(--accent);}
+.mccard b{display:block; font-size:1.02rem; color:var(--ink); margin-bottom:7px;}
+.mccard span{font-size:.92rem; line-height:1.7; color:var(--sec);}
+
+@media (max-width:640px){
+  .orows, .sread dl{grid-template-columns:1fr; gap:2px 0;}
+  .orows dt, .sread dt{padding-top:11px;}
+  .keybox, .matcher{padding:24px 20px;}
+  .subbox{padding:28px 22px;}
+  .mcgrid{grid-template-columns:1fr;}
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ================= THEME 01 BROADSHEET =================
+   A scholarly newspaper. Hairline rules, tabular listings,
+   one oxblood accent doing all the work. Square corners. */
+:root{
+  --font-display:'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body:'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+
+  --paper:#faf8f4; --paper-2:#f2eee7; --card:#ffffff;
+  --line:#e2ddd3; --line-2:#c9c2b5;
+  --ink:#1a1712; --ink-2:#3c372f; --ink-3:#6f6a60;
+  --navy:#1a1712; --navy-deep:#8c2f28;
+  --accent:#8c2f28; --accent-soft:#f5ece9; --accent-line:#d9bdb9;
+  --gold:#8c2f28; --gold-soft:#f5ece9; --gold-line:#e2ddd3; --gold-bright:#d8a49c;
+  --radius:0; --radius-sm:0; --shadow:none; --shadow-lift:none;
+
+  --mc-paper:#faf8f4; --mc-band:#f2eee7; --mc-card:#ffffff;
+  --mc-ink:#1a1712; --mc-ink-2:#3c372f; --mc-ink-3:#6f6a60; --mc-muted:#6f6a60;
+  --mc-rule:#e2ddd3; --mc-border:#c9c2b5;
+  --mc-accent:#8c2f28; --mc-accent-dim:#d8a49c;
+  --mc-on-dark:#faf8f4; --mc-on-dark-2:#a9a49a; --mc-dark-rule:#332e27;
+  --mc-serif:'Playfair Display', Georgia, serif;
+
+  --deep:#1c3630;          /* the one dark panel colour */
+  --muted:#6f6a60; --sec:#3c372f; --body:#3c372f;
+}
+body{background:var(--paper); color:var(--ink-2); font-size:19px; line-height:1.75;}
+.wrap{max-width:1000px;}
+
+/* ---- masthead ---- */
+.mc-nav{background:#1a1712;}
+.mc-brand b{font-family:var(--font-display); font-weight:600; font-size:19px; letter-spacing:.01em;}
+.mc-nav-inner{gap:20px;}
+.mc-nav-links{font-size:13px; letter-spacing:.02em; gap:14px; flex:0 1 auto;}
+.mc-nav-right{gap:11px; flex:0 0 auto;}
+.mc-site{font-size:12px;}
+.mc-book{font-size:12px; padding:6px 12px;}
+.mc-brand span{font-size:10.5px; letter-spacing:.1em;}
+@media (max-width:1080px){ .mc-site{display:none;} }
+.mc-nav-links a{color:#cfc9bd;}
+.mc-nav .lang-toggle{background:transparent; border:1px solid #4a443b; color:#e8e3d9;
+  border-radius:0; font-weight:600; letter-spacing:.06em; padding:5px 13px;}
+.mc-nav .lang-toggle:hover{background:var(--accent); border-color:var(--accent); color:#fff;}
+.mc-book{border-radius:0 !important;}
+
+/* ---- hero ---- */
+.hero{text-align:start; padding:64px 0 30px; border-bottom:1px solid var(--line);}
+.kicker{font-family:var(--font-body); font-size:13px; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--accent); font-weight:600;}
+[dir="rtl"] .kicker{letter-spacing:.04em; font-size:15px;}
+.hero h1{font-family:var(--font-display); font-weight:600; font-size:76px; line-height:1.06;
+  letter-spacing:-.015em; color:var(--ink); margin-top:20px; max-width:14ch;}
+[dir="rtl"] .hero h1{font-family:var(--font-ar); font-weight:600; font-size:62px; line-height:1.3; max-width:none;}
+.hero p.sub{font-size:21px; line-height:1.65; color:var(--ink-2); max-width:640px; margin:24px 0 0;}
+
+/* ---- the season callout: oxblood spine ---- */
+.keybox{background:var(--card); border:1px solid var(--line); border-inline-start:5px solid var(--accent);
+  padding:30px 34px; margin:36px 0 0;}
+.keybox h2{font-family:var(--font-display); font-weight:600; font-size:31px; line-height:1.32; color:var(--ink);}
+[dir="rtl"] .keybox h2{font-family:var(--font-ar); font-size:28px;}
+.keybox p{font-size:19px; line-height:1.8; color:var(--ink-2); margin-top:12px;}
+
+/* ---- quiz matcher: the one dark slab ---- */
+.matcher{background:var(--deep); padding:38px 34px; margin-top:34px;}
+.matcher h2{font-family:var(--font-display); font-weight:600; font-size:31px; color:#f4f1ea; line-height:1.3;}
+[dir="rtl"] .matcher h2{font-family:var(--font-ar); font-size:28px;}
+.matcher p{color:#b4c2bc; font-size:18px; margin-top:11px;}
+.matcher a{color:#e8b3ac;}
+#matcher .chip, .matcher .chip{background:transparent; color:#e9e5dc !important;
+  border-color:#4a6a61 !important; border-radius:0;}
+#matcher .chip:hover, .matcher .chip:hover{border-color:#e8b3ac !important; color:#ffffff !important;}
+#matcher .chip.on, .matcher .chip.on{background:#f4f1ea !important; color:#1c3630 !important;
+  border-color:#f4f1ea !important;}
+.matcher .hint{color:#8fa39c; font-size:15px;}
+
+/* ---- filters ---- */
+.ctrow h3, .fgroup h3{font-size:12px; letter-spacing:.2em; color:var(--ink-3); font-weight:600;}
+[dir="rtl"] .ctrow h3, [dir="rtl"] .fgroup h3{letter-spacing:.02em; font-size:15px;}
+.chip{border-radius:0; background:transparent; border-color:var(--line-2); color:var(--ink-2); font-size:15px;}
+.chip.on{background:var(--ink); border-color:var(--ink); color:var(--paper);}
+.count{font-size:15px; color:var(--ink-3); border-top:1px solid var(--line); padding-top:16px;}
+
+/* ---- listings as ledger blocks ---- */
+#list{border-top:2px solid var(--ink);}
+.opp{background:var(--card); border:1px solid var(--line); border-top:0; padding:26px 30px;}
+.opp:first-child{border-top:1px solid var(--line);}
+.oorg{font-family:var(--font-display); font-weight:600; font-size:25px; color:var(--ink); line-height:1.28;}
+[dir="rtl"] .oorg{font-family:var(--font-ar); font-size:23px;}
+.oprog{font-size:17px; color:var(--ink-3);}
+.tag{border-radius:0; font-size:11px; letter-spacing:.16em; border-color:var(--line-2); color:var(--ink-3);}
+[dir="rtl"] .tag{letter-spacing:.02em; font-size:13px;}
+.tag.open{background:var(--accent); border-color:var(--accent); color:#fff;}
+.orows{margin-top:18px; grid-template-columns:170px 1fr; gap:0 22px; border-top:1px solid var(--line);}
+.orows dt{font-size:12px; letter-spacing:.14em; color:var(--ink-3); padding:13px 0 0;
+  border-bottom:1px solid var(--line);}
+[dir="rtl"] .orows dt{letter-spacing:.02em; font-size:14px;}
+.orows dd{font-size:18px; line-height:1.7; color:var(--ink-2); padding:13px 0;
+  border-bottom:1px solid var(--line);}
+.orows dt{padding-bottom:13px;}
+.olink{font-size:16px; color:var(--accent); border-bottom:1px solid var(--accent);}
+.ometa{font-size:13px; color:var(--ink-3); letter-spacing:.03em;}
+
+/* ---- sector read ---- */
+.sread{background:var(--paper-2); border:0; border-inline-start:5px solid var(--accent); padding:26px 30px;}
+.sread h3{font-family:var(--font-display); font-weight:600; font-size:22px; color:var(--ink);}
+[dir="rtl"] .sread h3{font-family:var(--font-ar);}
+.sread dt{font-size:12px; letter-spacing:.14em; color:var(--ink-3);}
+[dir="rtl"] .sread dt{letter-spacing:.02em; font-size:14px;}
+.sread dd{font-size:18px;}
+
+/* ---- evidence ---- */
+.srcbox h2{font-family:var(--font-display); font-weight:600; font-size:34px; color:var(--ink); line-height:1.25;}
+[dir="rtl"] .srcbox h2{font-family:var(--font-ar); font-size:30px;}
+#evlist{border-top:2px solid var(--ink);}
+.ev{border-top:1px solid var(--line); padding:26px 0;}
+.ev:first-of-type{border-top:0;}
+.evtag{border-radius:0; font-size:11px; letter-spacing:.16em; border-color:var(--line-2); color:var(--ink-3);}
+[dir="rtl"] .evtag{letter-spacing:.02em; font-size:13px;}
+.evtag.causal{background:var(--accent); border-color:var(--accent); color:#fff;}
+.evtag.contested, .evtag.gap{background:var(--ink); border-color:var(--ink); color:var(--paper);}
+.evclaim{font-family:var(--font-display); font-weight:500; font-size:24px; line-height:1.45; color:var(--ink);}
+[dir="rtl"] .evclaim{font-family:var(--font-ar); font-weight:600; font-size:21px; line-height:1.7;}
+.evsrc{font-size:15px;}
+.evnote{background:var(--paper-2); font-size:17px; line-height:1.75; padding:16px 20px;
+  border-inline-start:3px solid var(--line-2);}
+.evlink{color:var(--accent); border-bottom-color:var(--accent);}
+
+/* ---- employer call to action ---- */
+.subbox{background:var(--ink); padding:42px 36px;}
+.subbox h2{font-family:var(--font-display); font-weight:600; font-size:31px; color:#f7f4ee;}
+[dir="rtl"] .subbox h2{font-family:var(--font-ar); font-size:28px;}
+.subbox p{color:#b8b2a6; font-size:18px;}
+.subbox .btn{border-radius:0; background:var(--accent); color:#fff; border-color:var(--accent); font-size:17px;}
+.subbox .btn:hover{background:#a8382f; border-color:#a8382f; color:#fff;}
+
+/* ---- across to Major Compass ---- */
+.mcbox{border-top:2px solid var(--ink); padding-top:34px;}
+.mcbox h2{font-family:var(--font-display); font-weight:600; font-size:28px; color:var(--ink);}
+[dir="rtl"] .mcbox h2{font-family:var(--font-ar); font-size:25px;}
+.mccard{border-radius:0; border-color:var(--line); background:var(--card); padding:24px;}
+.mccard:hover{border-color:var(--accent);}
+.mccard b{font-family:var(--font-display); font-weight:600; font-size:19px;}
+[dir="rtl"] .mccard b{font-family:var(--font-ar);}
+.mccard span{font-size:16px;}
+
+.btn{border-radius:0;}
+footer.site{border-top:1px solid var(--line); margin-top:44px;}
+
+@media (max-width:760px){
+  body{font-size:18px;}
+  .hero{padding:40px 0 24px;}
+  .hero h1{font-size:44px; line-height:1.12; max-width:none;}
+  [dir="rtl"] .hero h1{font-size:39px;}
+  .hero p.sub{font-size:19px;}
+  .keybox{padding:24px 22px; border-inline-start-width:4px;}
+  .keybox h2{font-size:25px;}
+  .matcher{padding:26px 22px;}
+  .matcher h2{font-size:25px;}
+  .opp{padding:22px 20px;}
+  .oorg{font-size:22px;}
+  .orows{grid-template-columns:1fr; gap:0;}
+  .orows dt{border-bottom:0; padding:14px 0 0;}
+  .orows dd{padding:4px 0 14px;}
+  .evclaim{font-size:21px;}
+  .srcbox h2{font-size:28px;}
+  .subbox{padding:30px 22px;}
+  .sread{padding:22px 20px;}
+}
+</style>
+<style>
+/* ---- apply row ---- */
+.applyrow{margin-top:20px; display:flex; flex-wrap:wrap; gap:12px; align-items:center;}
+.btn.apply{background:var(--accent); color:#fff; border:1px solid var(--accent);
+  padding:12px 22px; font-size:16px; font-weight:600; text-decoration:none; border-radius:0;
+  min-height:46px; display:inline-flex; align-items:center;}
+.btn.apply:hover{background:#a8382f; border-color:#a8382f; color:#fff;}
+.btn.apply.mail{background:transparent; color:var(--accent);}
+.btn.apply.mail:hover{background:var(--accent); color:#fff;}
+.applyrow .olink{margin-top:0;}
+.needbox{margin-top:16px; background:var(--paper-2); border-inline-start:3px solid var(--line-2);
+  padding:16px 20px;}
+.needbox b{display:block; font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-3); margin-bottom:8px;}
+[dir="rtl"] .needbox b{letter-spacing:.02em; font-size:14px;}
+.needbox p{font-size:17px; line-height:1.75; color:var(--ink-2);}
+.cvlink{display:inline-block; margin-top:14px; font-size:15px; color:var(--ink-3);
+  text-decoration:none; border-bottom:1px dotted var(--line-2);}
+.cvlink:hover{color:var(--accent); border-bottom-color:var(--accent);}
+
+/* ---- mobile: real tap targets, no horizontal scroll ---- */
+html, body{overflow-x:hidden;}
+@media (max-width:760px){
+  .applyrow{gap:10px;}
+  .btn.apply{width:100%; justify-content:center; min-height:50px; font-size:17px;}
+  .applyrow .olink{width:100%;}
+  .chip{min-height:42px; display:inline-flex; align-items:center; font-size:16px; padding:8px 15px;}
+  .needbox p{font-size:16px;}
+  .mc-nav-inner{padding:10px 16px;}
+  .mc-nav .lang-toggle{min-height:40px; padding:8px 16px; font-size:13px;}
+  .mc-nav-links a{padding-block:10px;}
+  .olink{padding-block:8px;}
+  .wrap{padding-inline:18px;}
+  .opp{padding:20px 16px;}
+  .evnote{padding:14px 16px;}
+}
+</style>
+
+<style>
+/* ---------- Gig Opportunities specific ---------- */
+.mc-nav-links{justify-content:flex-start;}
+.how{background:var(--card); border-block:1px solid var(--line); padding:28px 26px; margin:34px 0 8px;}
+.how h2{font-size:1.42rem; line-height:1.45; color:var(--ink); margin-bottom:16px;}
+.steps{display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px;}
+@media(max-width:760px){ .steps{grid-template-columns:1fr;} }
+.step b{display:block; font-family:var(--font-display); font-weight:400; font-size:1.9rem;
+  color:var(--accent); line-height:1; margin-bottom:8px;}
+[dir="rtl"] .step b{font-family:var(--font-ar); font-weight:600; font-size:1.6rem;}
+.step p{font-size:.97rem; line-height:1.8; color:var(--body);}
+
+.ctapair{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:26px;}
+@media(max-width:760px){ .ctapair{grid-template-columns:1fr;} }
+.cta{background:var(--card); border:1px solid var(--line); padding:26px 26px 24px;
+  display:flex; flex-direction:column; align-items:flex-start; gap:10px;}
+.cta.dark{background:var(--ink); border-color:var(--ink);}
+.cta h2{font-size:1.3rem; line-height:1.4; color:var(--ink);}
+.cta.dark h2{color:var(--paper);}
+.cta p{font-size:.96rem; line-height:1.8; color:var(--body); flex:1;}
+.cta.dark p{color:#c9ccd2;}
+.cta .btn.apply{margin-top:6px;}
+.cta.dark .btn.apply{background:var(--paper); color:var(--ink); border-color:var(--paper);}
+.cta.dark .btn.apply:hover{background:var(--gold-bright); border-color:var(--gold-bright); color:var(--ink);}
+.orline{font-size:.88rem; color:var(--ink-3);}
+.cta.dark .orline{color:#9a9da3;}
+.orline a{color:var(--accent);}
+.cta.dark .orline a{color:var(--gold-bright);}
+
+.found{margin-top:26px; background:var(--paper-2); border-inline-start:3px solid var(--accent);
+  padding:24px 26px;}
+.found h3{font-size:1.15rem; color:var(--ink); margin-bottom:10px;}
+.found p{font-size:.98rem; line-height:1.85; color:var(--body);}
+
+.ctrl{margin-top:36px; padding-top:24px; border-top:2px solid var(--line);}
+.fgroup{margin-top:17px;}
+.fgroup h3{font-size:.74rem; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--muted); margin-bottom:11px; font-weight:600;}
+[dir="rtl"] .fgroup h3{letter-spacing:0; font-size:.86rem;}
+.chips{display:flex; flex-wrap:wrap; gap:8px;}
+.chip{border:1px solid var(--line); background:var(--card); color:var(--body);
+  padding:7px 14px; font-size:.9rem; cursor:pointer; font-family:inherit; line-height:1.5;
+  text-transform:none; letter-spacing:normal; border-radius:0;}
+.chip:hover{border-color:var(--accent);}
+.chip.on{background:var(--ink); color:var(--paper); border-color:var(--ink);}
+.count{margin-top:20px; font-size:.94rem; color:var(--muted);}
+
+.opp{border-top:1px solid var(--line); padding:26px 0;}
+.opp:first-child{border-top:0;}
+.opp.filled{opacity:.55;}
+.oh{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px;}
+.oh b{font-family:var(--font-display); font-weight:400; font-size:1.35rem; line-height:1.35;
+  color:var(--ink); flex:1; min-width:200px;}
+[dir="rtl"] .oh b{font-family:var(--font-ar); font-weight:600;}
+.org{font-size:.98rem; color:var(--ink-2); margin-bottom:10px;}
+.tag{font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; font-weight:700;
+  padding:4px 9px; border:1px solid var(--line-2); color:var(--ink-3); white-space:nowrap;}
+[dir="rtl"] .tag{letter-spacing:0; font-size:.82rem;}
+.tag.pay{color:var(--good); border-color:var(--good-line); background:var(--good-soft);}
+.tag.done{color:var(--bad); border-color:var(--bad-line); background:var(--bad-soft);}
+.opp p.desc{font-size:.99rem; line-height:1.85; color:var(--body); margin-top:4px;}
+.meta{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px; padding-top:12px;
+  border-top:1px dashed var(--line);}
+@media(max-width:640px){ .meta{grid-template-columns:1fr;} }
+.meta div{font-size:.92rem; color:var(--ink-2); line-height:1.7;}
+.ml{display:block; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--accent); font-weight:700; margin-bottom:3px;}
+[dir="rtl"] .ml{letter-spacing:0; font-size:.8rem;}
+.checked{margin-top:10px; font-size:.85rem; color:var(--ink-3);}
+
+.crossbox{margin-top:46px; padding:26px; background:var(--card); border:1px solid var(--line);}
+.crossbox h2{font-size:1.3rem; margin-bottom:6px;}
+.crossbox p.sub{font-size:.94rem; color:var(--ink-3); margin-bottom:16px;}
+.crossgrid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;}
+@media(max-width:760px){ .crossgrid{grid-template-columns:1fr;} }
+.crosscard{display:block; border:1px solid var(--line); padding:16px 18px; text-decoration:none;
+  background:var(--paper);}
+.crosscard:hover{border-color:var(--accent);}
+.crosscard b{display:block; color:var(--ink); font-size:1rem; margin-bottom:4px;}
+.crosscard span{font-size:.88rem; color:var(--ink-3); line-height:1.6; display:block;}
+
+.srcbox{margin-top:40px; padding:22px 24px; background:var(--card); border:1px solid var(--line);}
+.srcbox h2{font-size:1.05rem; margin-bottom:6px;}
+.srcbox p{font-size:.92rem; color:var(--ink-2); line-height:1.8;}
+footer.site{margin-top:38px; padding-top:20px; border-top:1px solid var(--line);
+  font-size:.9rem; color:var(--ink-3); text-align:center;}
+</style>
+
+</head>
+<body>
+<div class="mc-nav">
+  <div class="mc-nav-inner">
+    <a class="mc-brand" href="./">
+      <b data-en="Gig Opportunities" data-ar="فرص العمل المرن">Gig Opportunities</b>
+      <span data-en="Dr. Saqer AlKhalifa" data-ar="د. صقر آل خليفة">Dr. Saqer AlKhalifa</span>
+    </a>
+    <nav class="mc-nav-links" aria-label="Sections">
+      <a href="#list" data-en="Gigs" data-ar="الفرص">Gigs</a>
+      <a href="#post" data-en="For companies" data-ar="للشركات">For companies</a>
+      <a href="#seekers" data-en="For job seekers" data-ar="للباحثين عن عمل">For job seekers</a>
+      <a href="https://internships.saqeralkhalifa.com/" data-en="Internships" data-ar="فرص التدريب">Internships</a>
+      <a href="https://saqeralkhalifa.github.io/major-compass/" data-en="Major Compass" data-ar="بوصلة التخصص">Major Compass</a>
+    </nav>
+    <div class="mc-nav-right">
+      <a class="mc-site" href="https://saqeralkhalifa.com/" data-en="saqeralkhalifa.com" data-ar="الموقع الرئيسي"
+         data-href-en="https://saqeralkhalifa.com/" data-href-ar="https://saqeralkhalifa.com/arabic/">saqeralkhalifa.com</a>
+      <a class="mc-book" href="https://saqeralkhalifa.com/#stores" data-en="The books" data-ar="الكتب"
+         data-href-en="https://saqeralkhalifa.com/#stores" data-href-ar="https://saqeralkhalifa.com/arabic/#buy">The books</a>
+      <button class="lang-toggle" id="langToggle">عربي</button>
+    </div>
+  </div>
+</div>
+<div class="wrap">
+
+<div class="hero">
+  <div class="kicker" id="t-kicker"></div>
+  <h1 class="serif" id="t-title"></h1>
+  <p class="sub" id="t-sub"></p>
+</div>
+
+<div class="how">
+  <h2 id="h-h"></h2>
+  <div class="steps">
+    <div class="step"><b>1</b><p id="h-1"></p></div>
+    <div class="step"><b>2</b><p id="h-2"></p></div>
+    <div class="step"><b>3</b><p id="h-3"></p></div>
+  </div>
+</div>
+
+<div class="ctapair">
+  <div class="cta dark" id="post">
+    <h2 id="p-h"></h2>
+    <p id="p-p"></p>
+    <a class="btn apply" id="p-btn" href="https://saqeralkhalifa.com/post-a-gig/" target="_blank" rel="noopener"></a>
+    <p class="orline"><span id="p-or"></span> <a id="p-mail" href="mailto:alkhalifa.sager@gmail.com?subject=Gig%20posting"></a></p>
+  </div>
+  <div class="cta" id="seekers">
+    <h2 id="s-h"></h2>
+    <p id="s-p"></p>
+    <a class="btn apply" id="s-btn" href="https://saqeralkhalifa.com/find-work/" target="_blank" rel="noopener"></a>
+    <p class="orline"><a id="s-cv" href="https://internships.saqeralkhalifa.com/cv.html" target="_blank" rel="noopener"></a></p>
+  </div>
+</div>
+
+<div class="ctrl" id="list">
+  <div class="fgroup"><h3 id="t-tylabel"></h3><div class="chips" id="tychips"></div></div>
+  <div class="fgroup"><h3 id="t-selabel"></h3><div class="chips" id="sechips"></div></div>
+  <div class="count" id="count"></div>
+</div>
+<div id="gigs"></div>
+<div class="found" id="found" hidden>
+  <h3 id="f-h"></h3>
+  <p id="f-p"></p>
+</div>
+
+<div class="crossbox">
+  <h2 id="x-h"></h2>
+  <p class="sub" id="x-p"></p>
+  <div class="crossgrid" id="xgrid"></div>
+</div>
+
+<div class="srcbox">
+  <h2 id="d-h"></h2>
+  <p id="d-p"></p>
+</div>
+
+<footer class="site"><p id="t-foot"></p></footer>
+</div>
+<script>
+/* Gig Opportunities data.
+   status: "open" the gig is taking applications, "filled" it is closed but kept briefly for honesty.
+   how: "us" applications go through the board, "direct" the company takes them itself (url required).
+   Every entry is checked with the company before it appears. Nothing here is guessed. */
+
+const GIGS = [
+];
+
+const TYPES = [
+  {k:"all",  en:"All",                  ar:"الكل"},
+  {k:"gig",  en:"One-off gig",          ar:"مهمة ليوم أو أيام"},
+  {k:"part", en:"Part-time",            ar:"دوام جزئي"},
+  {k:"temp", en:"Temporary",            ar:"عمل مؤقت"},
+  {k:"free", en:"Freelance and remote", ar:"عمل حر وعن بُعد"}
+];
+const SECTORS = [
+  {k:"all",   en:"All sectors",          ar:"كل القطاعات"},
+  {k:"event", en:"Events and sports",    ar:"الفعاليات والرياضة"},
+  {k:"hosp",  en:"Hospitality and food", ar:"الضيافة والمطاعم"},
+  {k:"ret",   en:"Retail",               ar:"التجزئة"},
+  {k:"log",   en:"Delivery and logistics", ar:"التوصيل والخدمات اللوجستية"},
+  {k:"adm",   en:"Office and admin",     ar:"الأعمال المكتبية والإدارية"},
+  {k:"med",   en:"Media and design",     ar:"الإعلام والتصميم"},
+  {k:"tech",  en:"Tech",                 ar:"التقنية"},
+  {k:"edu",   en:"Teaching and tutoring", ar:"التعليم والدروس الخصوصية"},
+  {k:"oth",   en:"Other",                ar:"أخرى"}
+];
+
+const T = {
+en:{
+  kicker:"Bahrain · Free to post · Free to apply",
+  title:"Gigs and short-term work in Bahrain",
+  sub:"A free noticeboard for short jobs: event shifts, part-time roles, freelance tasks and temporary cover. Companies post for free, applicants apply for free, and every posting is checked by a person before it appears.",
+  hH:"How it works",
+  h1:"A company sends a gig through the form, or by plain email. No charge, and there never will be.",
+  h2:"We check it with the company and publish it here, usually within a day.",
+  h3:"You apply with one ready email. Every application is passed on personally, so nothing disappears into a system.",
+  pH:"Do you have a gig, a short job, or a temporary role?",
+  pP:"Post it free in about three minutes. We check it, publish it, and send you the applications. Internships have their own board, linked above.",
+  pBtn:"Post an opportunity",
+  pOr:"Prefer email?",
+  pMail:"Send it to alkhalifa.sager@gmail.com",
+  sH:"Looking for work?",
+  sP:"Tell us who you are, what you can do, and when you are free. When a matching gig arrives we contact you, sometimes before it is even published. Your details stay with us and go to no one else without asking you first.",
+  sBtn:"Leave your details",
+  sCv:"No CV yet? Build one in five minutes",
+  tyLabel:"Type of work", seLabel:"Sector",
+  count:(n,t)=> n===t ? ("Showing all "+n+" gigs") : ("Showing "+n+" of "+t+" gigs"),
+  none:"Nothing matches those filters yet. Try widening one of them.",
+  fH:"The board is brand new.",
+  fP:"We are collecting the first gigs from Bahrain companies right now. If you run a business, be one of the founding posters: your gig gets the whole page to itself. If you are looking for work, leave your details above and you will be first in line the moment postings go live.",
+  dPay:"Pay", dTime:"Hours and duration", dLoc:"Location", dDead:"Apply by",
+  payAsk:"Pay on request", filled:"Filled",
+  applyUs:"Apply through us", more:"More details",
+  checked:(d)=>"Checked "+d,
+  xH:"From the same family",
+  xP:"Free tools for work and study decisions, all in Arabic and English.",
+  xCards:[
+    ["https://internships.saqeralkhalifa.com/","Internship Opportunities","193 verified internships in Bahrain, Oman and the UAE, with the real links and honest dates."],
+    ["https://saqeralkhalifa.github.io/major-compass/","Major Compass","A 34-question quiz that points you at the university major that actually fits you."],
+    ["https://saqeralkhalifa.com/","saqeralkhalifa.com","The books, the blog, and everything else by Dr. Saqer AlKhalifa."]
+  ],
+  dH:"What this board is, honestly",
+  dP:"This is a free community noticeboard run personally by Dr. Saqer AlKhalifa. It is not a licensed recruitment agency and it charges nothing to anyone, ever. Employment terms, pay and hours are agreed directly between you and the company, so check every detail before you rely on it, and tell us if something looks wrong or out of date.",
+  foot:"Gig Opportunities · Dr. Saqer AlKhalifa · saqeralkhalifa.com"
+},
+ar:{
+  kicker:"البحرين · النشر مجاني · التقديم مجاني",
+  title:"أعمال قصيرة وفرص عمل مرنة في البحرين",
+  sub:"لوحة مجانية للأعمال القصيرة: مناوبات الفعاليات، ووظائف الدوام الجزئي، والمهام الحرة، والأدوار المؤقتة. تنشر الشركات مجانًا، ويتقدم الباحثون مجانًا، وكل إعلان يراجعه إنسان قبل ظهوره.",
+  hH:"كيف تعمل اللوحة",
+  h1:"ترسل الشركة الفرصة عبر النموذج أو برسالة بريد عادية، دون أي رسوم الآن أو مستقبلًا.",
+  h2:"نتحقق منها مع الشركة وننشرها هنا، خلال يوم واحد غالبًا.",
+  h3:"تتقدم برسالة جاهزة بضغطة واحدة، ونوصل كل طلب بأنفسنا حتى لا يضيع أي طلب في نظام آلي.",
+  pH:"هل لديك مهمة قصيرة أو وظيفة مؤقتة؟",
+  pP:"انشرها مجانًا في نحو ثلاث دقائق. نتحقق منها وننشرها ونرسل إليك الطلبات. ولفرص التدريب لوحة مستقلة تجدها في الأعلى.",
+  pBtn:"انشر فرصة",
+  pOr:"تفضل البريد الإلكتروني؟",
+  pMail:"أرسلها إلى alkhalifa.sager@gmail.com",
+  sH:"تبحث عن عمل؟",
+  sP:"أخبرنا من أنت وما الذي تجيده ومتى تتفرغ. وعندما تصل فرصة مناسبة نتواصل معك، وأحيانًا قبل نشرها. بياناتك تبقى عندنا ولا تصل إلى أي جهة أخرى دون سؤالك أولًا.",
+  sBtn:"سجّل بياناتك",
+  sCv:"ليس لديك سيرة ذاتية؟ اصنعها في خمس دقائق",
+  tyLabel:"نوع العمل", seLabel:"القطاع",
+  count:(n,t)=> n===t ? ("تُعرض كل الفرص، وعددها "+n) : ("تُعرض "+n+" فرصة من أصل "+t),
+  none:"لا شيء يطابق هذه المرشّحات بعد. جرّب توسيع أحدها.",
+  fH:"اللوحة جديدة تمامًا.",
+  fP:"نجمع الآن أولى الفرص من شركات البحرين. إن كنت صاحب عمل فكن من أوائل الناشرين، وستحظى فرصتك بالصفحة كلها. وإن كنت تبحث عن عمل فسجّل بياناتك في الأعلى لتكون أول من نتواصل معه فور نشر الفرص.",
+  dPay:"الأجر", dTime:"الساعات والمدة", dLoc:"المكان", dDead:"آخر موعد للتقديم",
+  payAsk:"الأجر عند الطلب", filled:"شُغلت",
+  applyUs:"قدّم عن طريقنا", more:"تفاصيل أكثر",
+  checked:(d)=>"جرى التحقق في "+d,
+  xH:"من المنظومة نفسها",
+  xP:"أدوات مجانية لقرارات العمل والدراسة، كلها بالعربية والإنجليزية.",
+  xCards:[
+    ["https://internships.saqeralkhalifa.com/","فرص التدريب","١٩٣ فرصة تدريب موثّقة في البحرين وعُمان والإمارات، بالروابط الحقيقية والتواريخ الصادقة."],
+    ["https://saqeralkhalifa.github.io/major-compass/","بوصلة التخصص","اختبار من ٣٤ سؤالًا يدلك على التخصص الجامعي الذي يناسبك فعلًا."],
+    ["https://saqeralkhalifa.com/arabic/","الموقع الرئيسي","الكتب والمدونة وكل أعمال د. صقر آل خليفة."]
+  ],
+  dH:"ما هذه اللوحة، بصراحة",
+  dP:"هذه لوحة إعلانات مجتمعية مجانية يديرها شخصيًا د. صقر آل خليفة. وهي ليست مكتب توظيف مرخّصًا، ولا تتقاضى شيئًا من أحد أبدًا. شروط العمل والأجر والساعات تُتفق مباشرة بينك وبين الشركة، فتحقق من كل التفاصيل قبل الاعتماد عليها، وأخبرنا إن بدا لك شيء خاطئ أو قديم.",
+  foot:"فرص العمل المرن · د. صقر آل خليفة · saqeralkhalifa.com"
+}
+};
+
+let LANG = "en", TY = "all", SE = "all";
+
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+
+function applyHref(o){
+  var subj = (LANG==="en" ? "Application: " : "طلب تقديم: ") + o.role[LANG] +
+             (o.org ? (LANG==="en" ? " at " : " لدى ") + o.org[LANG] : "") + " [" + o.id + "]";
+  var body = LANG==="en"
+    ? "Hello Dr. Saqer,\n\nI would like to apply for this gig.\n\nMy name: \nMy phone: \nWhere I live: \nWhen I am free: \nWhy I fit this gig (two lines): \n\nMy CV is attached.\n"
+    : "مرحبًا د. صقر،\n\nأرغب في التقدم لهذه الفرصة.\n\nاسمي: \nهاتفي: \nمكان سكني: \nأوقات تفرغي: \nلماذا أناسب هذه الفرصة (سطران): \n\nسيرتي الذاتية مرفقة.\n";
+  return "mailto:alkhalifa.sager@gmail.com?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
+}
+
+function card(o){
+  var t = T[LANG];
+  var ty = TYPES.filter(function(x){return x.k===o.ty;})[0];
+  var out = '<div class="opp'+(o.status==="filled"?" filled":"")+'" id="'+o.id+'">';
+  out += '<div class="oh"><b>'+esc(o.role[LANG])+'</b>';
+  if(ty) out += '<span class="tag">'+ty[LANG]+'</span>';
+  out += o.pay ? '<span class="tag pay">'+esc(o.pay[LANG])+'</span>'
+               : '<span class="tag">'+t.payAsk+'</span>';
+  if(o.status==="filled") out += '<span class="tag done">'+t.filled+'</span>';
+  out += '</div>';
+  if(o.org) out += '<div class="org">'+esc(o.org[LANG])+'</div>';
+  if(o.desc) out += '<p class="desc">'+esc(o.desc[LANG])+'</p>';
+  out += '<div class="meta">';
+  if(o.pay)  out += '<div><span class="ml">'+t.dPay+'</span>'+esc(o.pay[LANG])+'</div>';
+  if(o.time) out += '<div><span class="ml">'+t.dTime+'</span>'+esc(o.time[LANG])+'</div>';
+  if(o.loc)  out += '<div><span class="ml">'+t.dLoc+'</span>'+esc(o.loc[LANG])+'</div>';
+  if(o.dead) out += '<div><span class="ml">'+t.dDead+'</span>'+esc(o.dead[LANG])+'</div>';
+  out += '</div>';
+  if(o.status!=="filled"){
+    out += '<div class="applyrow">';
+    out += '<a class="btn apply mail" href="'+applyHref(o)+'">'+t.applyUs+'</a>';
+    if(o.url) out += '<a class="olink" href="'+o.url+'" target="_blank" rel="noopener">'+t.more+'</a>';
+    out += '</div>';
+  }
+  if(o.checked) out += '<div class="checked">'+t.checked(o.checked)+'</div>';
+  out += '</div>';
+  return out;
+}
+
+function chips(el, list, cur, attr){
+  el.innerHTML = list.map(function(x){
+    return '<button class="chip'+(x.k===cur?" on":"")+'" '+attr+'="'+x.k+'">'+x[LANG]+'</button>';
+  }).join("");
+}
+
+function render(){
+  var t = T[LANG];
+  ["kicker","title","sub"].forEach(function(k){ document.getElementById("t-"+k).textContent = t[k]; });
+  document.getElementById("h-h").textContent = t.hH;
+  document.getElementById("h-1").textContent = t.h1;
+  document.getElementById("h-2").textContent = t.h2;
+  document.getElementById("h-3").textContent = t.h3;
+  document.getElementById("p-h").textContent = t.pH;
+  document.getElementById("p-p").textContent = t.pP;
+  document.getElementById("p-btn").textContent = t.pBtn;
+  document.getElementById("p-or").textContent = t.pOr;
+  document.getElementById("p-mail").textContent = t.pMail;
+  document.getElementById("s-h").textContent = t.sH;
+  document.getElementById("s-p").textContent = t.sP;
+  document.getElementById("s-btn").textContent = t.sBtn;
+  document.getElementById("s-cv").textContent = t.sCv;
+  document.getElementById("t-tylabel").textContent = t.tyLabel;
+  document.getElementById("t-selabel").textContent = t.seLabel;
+  document.getElementById("f-h").textContent = t.fH;
+  document.getElementById("f-p").textContent = t.fP;
+  document.getElementById("x-h").textContent = t.xH;
+  document.getElementById("x-p").textContent = t.xP;
+  document.getElementById("xgrid").innerHTML = t.xCards.map(function(c){
+    return '<a class="crosscard" href="'+c[0]+'"><b>'+c[1]+'</b><span>'+c[2]+'</span></a>';
+  }).join("");
+  document.getElementById("d-h").textContent = t.dH;
+  document.getElementById("d-p").textContent = t.dP;
+  document.getElementById("t-foot").textContent = t.foot;
+
+  chips(document.getElementById("tychips"), TYPES, TY, "data-ty");
+  chips(document.getElementById("sechips"), SECTORS, SE, "data-se");
+
+  var open = GIGS.filter(function(o){ return (TY==="all"||o.ty===TY) && (SE==="all"||o.se===SE); });
+  var list = document.getElementById("gigs");
+  var found = document.getElementById("found");
+  var count = document.getElementById("count");
+  if(GIGS.length === 0){
+    list.innerHTML = "";
+    count.textContent = "";
+    found.hidden = false;
+  }else{
+    found.hidden = true;
+    count.textContent = open.length ? t.count(open.length, GIGS.length) : t.none;
+    list.innerHTML = open.map(card).join("");
+  }
+}
+
+function gc(path, title){
+  if(window.goatcounter && window.goatcounter.count){
+    try{ window.goatcounter.count({path:path, title:title, event:true}); }catch(e){}
+  }
+}
+
+document.addEventListener("click", function(e){
+  var c = e.target.closest ? e.target.closest(".chip") : null;
+  if(c){
+    if(c.hasAttribute("data-ty")){ TY = c.getAttribute("data-ty"); gc("gg-ty-"+TY, "Type "+TY); }
+    else if(c.hasAttribute("data-se")){ SE = c.getAttribute("data-se"); gc("gg-se-"+SE, "Sector "+SE); }
+    render();
+    return;
+  }
+  if(!e.target.closest) return;
+  if(e.target.closest("#p-btn")) gc("gg-post", "Company form opened");
+  if(e.target.closest("#p-mail")) gc("gg-post-mail", "Company mailto opened");
+  if(e.target.closest("#s-btn")) gc("gg-seek", "Seeker form opened");
+  if(e.target.closest("#s-cv")) gc("gg-cv", "CV builder opened");
+  if(e.target.closest(".btn.apply.mail") && e.target.closest(".opp")) gc("gg-apply", "Application email opened");
+  if(e.target.closest(".olink")) gc("gg-out", "Outbound to employer");
+  if(e.target.closest(".crosscard")) gc("gg-cross", "Across to family site");
+});
+
+document.getElementById("langToggle").addEventListener("click", function(){
+  LANG = (LANG === "en") ? "ar" : "en";
+  document.documentElement.lang = LANG;
+  document.documentElement.dir = (LANG === "ar") ? "rtl" : "ltr";
+  this.textContent = (LANG === "ar") ? "English" : "عربي";
+  render();
+});
+
+/* deep links: ?ty= and ?se= */
+try{
+  var q = new URLSearchParams(location.search);
+  var _t = q.get("ty"); if(_t && TYPES.some(function(x){return x.k===_t;})) TY = _t;
+  var _s = q.get("se"); if(_s && SECTORS.some(function(x){return x.k===_s;})) SE = _s;
+}catch(e){}
+
+render();
+</script>
+<script>
+(function(){
+  function sync(){
+    var l = document.documentElement.lang === "ar" ? "ar" : "en";
+    var n = document.querySelectorAll("[data-en]");
+    for(var i=0;i<n.length;i++){
+      n[i].textContent = n[i].getAttribute("data-"+l);
+      var h = n[i].getAttribute("data-href-"+l);
+      if(h) n[i].setAttribute("href", h);
+    }
+  }
+  try{ new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]}); }catch(e){}
+  document.addEventListener("click", function(e){ if(e.target && e.target.id === "langToggle") setTimeout(sync, 0); }, true);
+  sync();
+})();
+</script>
+<script>
+(function(){
+  var b = document.getElementById("langToggle");
+  if(!b) return;
+  if(mcInitLang() === "ar" && document.documentElement.lang !== "ar") b.click();
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.id === "langToggle"){
+      setTimeout(function(){ mcSaveLang(document.documentElement.lang === "ar" ? "ar" : "en"); }, 0);
+    }
+  }, true);
+})();
+</script>
+</body>
+</html>

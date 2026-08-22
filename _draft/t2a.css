@@ -48,12 +48,12 @@
 .t2a .card--blue{background:#152A55;border-color:#2E4477;color:#F3EADA}
 .t2a .card--blue h3,.t2a .card--blue h4{color:#F3EADA}
 .t2a .card--blue p{color:#CBD5EA}
-.t2a .store-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1px;background:#E2D5BB;border:1px solid #E2D5BB}
-.t2a .store-grid > a{display:flex;justify-content:space-between;align-items:center;gap:14px;background:#FAF5EA;padding:16px 18px;font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#4A3728;border-bottom:0}
+.t2a .store-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:0;background:transparent;border-top:1px solid #E2D5BB;border-left:1px solid #E2D5BB}
+.t2a .store-grid > a{display:flex;justify-content:space-between;align-items:center;gap:14px;background:transparent;padding:16px 18px;font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#4A3728;border-bottom:1px solid #E2D5BB;border-right:1px solid #E2D5BB}
 .t2a .store-grid > a:hover{background:#EFE4CE;color:#152A55}
 .t2a .store-grid .price{color:#8A6A2E}
-.t2a .band .store-grid{background:#2E4477;border-color:#2E4477}
-.t2a .band .store-grid > a{background:#152A55;color:#F3EADA}
+.t2a .band .store-grid{background:transparent;border-top-color:#2E4477;border-left-color:#2E4477}
+.t2a .band .store-grid > a{background:transparent;color:#F3EADA;border-bottom-color:#2E4477;border-right-color:#2E4477}
 .t2a .band .store-grid > a:hover{background:#1B3466;color:#C09A45}
 .t2a .band .store-grid .price{color:#C09A45}
 .t2a .pullout{background:#152A55;color:#F3EADA;padding:clamp(28px,4vw,48px);border-radius:2px}

@@ -75,6 +75,8 @@
 .t2a .contact-form button[type=submit],.t2a .contact-form input[type=submit]{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;background:#152A55;color:#FAF5EA;border:1px solid #152A55;border-radius:2px;padding:14px 22px;cursor:pointer}
 .t2a .contact-form button[type=submit]:hover{background:#1E3A78;border-color:#1E3A78}
 .t2a .formnote{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#8A7761;margin-top:16px}
+.t2a .video{max-width:760px;margin-top:26px}
+.t2a .video iframe{width:100%;height:428px;border:0;display:block}
 .t2a .svc{background:#152A55;color:#F3EADA}
 .t2a .svc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:16px;padding-bottom:16px;padding-left:clamp(20px,4vw,40px);padding-right:clamp(20px,4vw,40px)}
 .t2a .svc summary::-webkit-details-marker{display:none}
@@ -101,6 +103,7 @@
 .t2a[dir=rtl] .btn{font-family:'Noto Naskh Arabic','Amiri',Georgia,serif;font-size:15px;letter-spacing:0;text-transform:none;padding:12px 26px}
 .t2a[dir=rtl] .pullout .quote{font-family:'Noto Naskh Arabic','Amiri',Georgia,serif;line-height:1.8}
 .t2a[dir=rtl] .svc .svc-s{font-family:'Noto Naskh Arabic','Amiri',Georgia,serif}
+.t2a[dir=rtl] .svc .svc-t{font-family:'Noto Naskh Arabic','Amiri',Georgia,serif;font-size:16px;letter-spacing:0;text-transform:none;font-weight:700}
 .t2a[dir=rtl] .pagefoot a{font-family:'Noto Naskh Arabic','Amiri',Georgia,serif;font-size:14px;letter-spacing:0;text-transform:none;margin-right:0;margin-left:18px}
 .t2a .arrow::after{content:" →"}
 .t2a[dir=rtl] .arrow::after{content:" ←"}

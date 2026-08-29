@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gigs.saqeralkhalifa.com/sitemap.xml

@@ -1356,18 +1356,21 @@ try{
 render();
 
 /* HASH JUMP. The sections are rendered by this script, so the browser has already
-   given up on the hash by the time #jobs exists. Re-apply it once, after render,
-   otherwise every deep link into #jobs (the menu on all four sites, and the link
-   on the Instagram story) drops people at the top of the page. */
+   given up on the hash by the time #jobs exists. Re-apply it after render, and keep
+   re-applying for a moment because fonts and later scripts shift the layout and can
+   put the page back at the top. Without this every deep link into #jobs (the menu on
+   all four sites, and the link on the story) drops people at the top of the page. */
 try{
   if(location.hash && location.hash.length > 1){
-    var _h = location.hash.slice(1);
-    requestAnimationFrame(function(){
-      requestAnimationFrame(function(){
-        var el = document.getElementById(_h);
-        if(el) el.scrollIntoView();
-      });
-    });
+    var _h = decodeURIComponent(location.hash.slice(1));
+    var _n = 0;
+    var _go = function(){
+      var el = document.getElementById(_h);
+      if(el && window.scrollY < 40){ el.scrollIntoView(); }
+      if(++_n < 14) setTimeout(_go, 120);
+    };
+    setTimeout(_go, 0);
+    window.addEventListener("load", function(){ _n = 0; setTimeout(_go, 60); });
   }
 }catch(e){}
 </script>

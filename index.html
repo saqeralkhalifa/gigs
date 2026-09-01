@@ -1354,6 +1354,22 @@ try{
 }catch(e){}
 
 render();
+
+/* HASH JUMP. The sections are rendered by this script, so the browser has already
+   given up on the hash by the time #jobs exists. Re-apply it once, after render,
+   otherwise every deep link into #jobs (the menu on all four sites, and the link
+   on the Instagram story) drops people at the top of the page. */
+try{
+  if(location.hash && location.hash.length > 1){
+    var _h = location.hash.slice(1);
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        var el = document.getElementById(_h);
+        if(el) el.scrollIntoView();
+      });
+    });
+  }
+}catch(e){}
 </script>
 <script>
 (function(){

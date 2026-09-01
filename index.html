@@ -1357,17 +1357,25 @@ render();
 
 /* HASH JUMP. The sections are rendered by this script, so the browser has already
    given up on the hash by the time #jobs exists. Re-apply it after render, and keep
-   re-applying for a moment because fonts and later scripts shift the layout and can
-   put the page back at the top. Without this every deep link into #jobs (the menu on
-   all four sites, and the link on the story) drops people at the top of the page. */
+   re-applying for a moment because fonts and later scripts shift the layout.
+   Use an explicit instant scroll: the page sets scroll-behavior:smooth, and under
+   that, scrollIntoView() silently does nothing in some browsers. Offset by the height
+   of the fixed bar so the heading is not hidden beneath it. Without all of this every
+   deep link into #jobs, which is the Full-time Jobs item in the menu on all four
+   sites, drops people at the top of the page. */
 try{
   if(location.hash && location.hash.length > 1){
     var _h = decodeURIComponent(location.hash.slice(1));
     var _n = 0;
     var _go = function(){
       var el = document.getElementById(_h);
-      if(el && window.scrollY < 40){ el.scrollIntoView(); }
-      if(++_n < 14) setTimeout(_go, 120);
+      if(el && window.scrollY < 40){
+        var bar = document.getElementById("wpbar");
+        var off = bar ? bar.getBoundingClientRect().height + 10 : 12;
+        var y = el.getBoundingClientRect().top + window.scrollY - off;
+        window.scrollTo({ top: y > 0 ? y : 0, behavior: "instant" });
+      }
+      if(++_n < 16) setTimeout(_go, 110);
     };
     setTimeout(_go, 0);
     window.addEventListener("load", function(){ _n = 0; setTimeout(_go, 60); });

@@ -1309,7 +1309,7 @@ function render(){
   }).join("");
   document.getElementById("d-h").textContent = t.dH;
   document.getElementById("d-p").textContent = t.dP;
-  document.getElementById("t-foot").textContent = t.foot;
+  document.getElementById("t-foot").innerHTML = t.foot;
 
   chips(document.getElementById("tychips"), TYPES, TY, "data-ty");
   chips(document.getElementById("sechips"), SECTORS, SE, "data-se");

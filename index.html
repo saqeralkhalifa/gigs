@@ -1049,7 +1049,10 @@ const JGROUPS = [
   {k:"gov",  en:"Government and national platforms", ar:"الجهات الحكومية والمنصات الوطنية"},
   {k:"uni",  en:"Universities",                      ar:"الجامعات"},
   {k:"corp", en:"Big employers' careers pages",      ar:"صفحات التوظيف في الشركات الكبرى"},
-  {k:"port", en:"Job portals",                       ar:"مواقع التوظيف"}
+  {k:"port", en:"Job portals",                       ar:"مواقع التوظيف"},
+  {k:"gcc",  en:"GCC employers that take applications from GCC nationals", ar:"جهات عمل خليجية تقبل طلبات مواطني دول مجلس التعاون",
+   note:{en:"The GCC Common Market lists employment in the public and private sectors among the areas where citizens of the six states are treated equally. Each page below prints its own nationality rule where it has one; where none is printed, none is claimed here. Counts are as opened on 4 September 2026.",
+         ar:"تُدرج السوق الخليجية المشتركة العمل في القطاعين العام والخاص ضمن مجالات المساواة بين مواطني الدول الست. وكل صفحة أدناه تطبع شرط الجنسية الخاص بها إن وُجد، وما لم يُطبع شرط فلا نزعم شيئًا هنا. والأعداد كما فُتحت في ٤ سبتمبر ٢٠٢٦."}}
 ];
 const SOURCES = [
  {g:"gov", url:"https://services.mol.gov.bh/",
@@ -1066,14 +1069,14 @@ const SOURCES = [
      ar:"شواغر الجهة الرقابية نفسها، منشورة كاملة بالمسمى والمتطلبات."}},
  {g:"gov", url:"https://kawader.tamkeen.bh/en/",
   n:{en:"Kawader by Tamkeen", ar:"كوادر من تمكين"},
-  d:{en:"Tamkeen's talent platform, weighted towards technology and digital roles. On 3 September 2026 every posting on it carried a closing date that had already passed.",
-     ar:"منصة المواهب من تمكين، وتميل إلى الوظائف التقنية والرقمية. وفي ٣ سبتمبر ٢٠٢٦ كان كل إعلان فيها يحمل موعد إغلاق قد انقضى."}},
+  d:{en:"Tamkeen's talent platform, weighted towards technology and digital roles. On 4 September 2026 every posting on it still carried a closing date that had already passed.",
+     ar:"منصة المواهب من تمكين، وتميل إلى الوظائف التقنية والرقمية. وفي ٤ سبتمبر ٢٠٢٦ كان كل إعلان فيها لا يزال يحمل موعد إغلاق قد انقضى."}},
  {g:"uni", url:"https://recruitment.uob.edu.bh/",
   n:{en:"University of Bahrain", ar:"جامعة البحرين"},
-  d:{en:"The university's recruitment portal, with academic posts open now.", ar:"بوابة التوظيف الرسمية للجامعة، وفيها شواغر أكاديمية مفتوحة الآن."}},
- {g:"uni", url:"https://careers.polytechnic.bh/",
+  d:{en:"The university's recruitment portal. On 4 September 2026 it said there are no vacancies at the moment.", ar:"بوابة التوظيف الرسمية للجامعة. وفي ٤ سبتمبر ٢٠٢٦ كانت تقول إنه لا توجد شواغر في الوقت الحالي."}},
+ {g:"uni", url:"https://www.polytechnic.bh/careers/",
   n:{en:"Bahrain Polytechnic", ar:"بوليتكنك البحرين"},
-  d:{en:"Academic, administrative and part-time tutor vacancies.", ar:"شواغر أكاديمية وإدارية وشواغر تدريس بدوام جزئي."}},
+  d:{en:"The Polytechnic's careers page. Its separate recruitment portal has been suspended, and on 4 September 2026 the page said there are currently no vacancies.", ar:"صفحة التوظيف في البوليتكنك. أما بوابة التوظيف المستقلة فقد أُوقفت، وفي ٤ سبتمبر ٢٠٢٦ كانت الصفحة تقول إنه لا توجد شواغر حاليًا."}},
  {g:"uni", url:"https://www.ahlia.edu.bh/vacancies/",
   n:{en:"Ahlia University", ar:"الجامعة الأهلية"},
   d:{en:"Faculty and administrative openings, with an application form.", ar:"شواغر أكاديمية وإدارية مع نموذج تقديم."}},
@@ -1084,10 +1087,10 @@ const SOURCES = [
   n:{en:"Gulf Air Group", ar:"مجموعة طيران الخليج"},
   d:{en:"The group's own recruitment portal, which also carries Bahrain Airport Company roles. Cabin crew, ground and office posts, each with a closing date.",
      ar:"بوابة التوظيف الخاصة بالمجموعة، وتضم كذلك وظائف شركة مطار البحرين. طاقم ضيافة ووظائف أرضية ومكتبية، لكل منها موعد إغلاق."}},
- {g:"corp", url:"https://www.bapcoenergies.com/careers",
+ {g:"corp", url:"https://iadygs.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/jobs",
   n:{en:"Bapco Energies", ar:"بابكو للطاقة"},
-  d:{en:"Energy roles and programmes. The vacancies themselves open in the recruitment portal linked from this page.",
-     ar:"وظائف وبرامج قطاع الطاقة. أما الشواغر نفسها فتُفتح في بوابة التوظيف المرتبطة بهذه الصفحة."}},
+  d:{en:"The company's recruitment portal, opening on the vacancy list. Two postings on 4 September 2026: a senior consultant in Manama and a senior security officer in Awali.",
+     ar:"بوابة التوظيف الخاصة بالشركة، وتفتح على قائمة الشواغر. إعلانان في ٤ سبتمبر ٢٠٢٦: مستشار أول في المنامة وضابط أمن أول في عوالي."}},
  {g:"corp", url:"https://careers.batelco.com/en/bahrain/",
   n:{en:"Batelco", ar:"بتلكو"},
   d:{en:"Technology and telecom roles. The postings here are not refreshed often, so check the date on each one.",
@@ -1097,7 +1100,7 @@ const SOURCES = [
   d:{en:"Zain vacancies on the group careers portal.", ar:"وظائف زين على بوابة التوظيف للمجموعة."}},
  {g:"corp", url:"https://nbbonline.com/about/careers/",
   n:{en:"National Bank of Bahrain", ar:"بنك البحرين الوطني"},
-  d:{en:"Banking careers.", ar:"وظائف مصرفية."}},
+  d:{en:"A general application form and the Thrive paid internship for Bahraini graduates. No vacancy list is published.", ar:"نموذج تقديم عام وبرنامج ثرايف للتدريب المدفوع لخريجي البحرين. ولا تُنشر قائمة شواغر."}},
  {g:"corp", url:"https://www.bbkonline.com/careers/",
   n:{en:"Bank of Bahrain and Kuwait", ar:"بنك البحرين والكويت"},
   d:{en:"Banking careers. A general application form rather than a list of open posts.",
@@ -1108,7 +1111,7 @@ const SOURCES = [
      ar:"وظائف مصرفية. نموذج تواصل فقط، دون نشر قائمة شواغر."}},
  {g:"corp", url:"https://careers.gib.com/",
   n:{en:"Gulf International Bank", ar:"بنك الخليج الدولي"},
-  d:{en:"Banking careers.", ar:"وظائف مصرفية."}},
+  d:{en:"The bank's job search. On 4 September 2026 it listed five vacancies, all in Khobar, Saudi Arabia, and none in Bahrain.", ar:"بحث الوظائف في البنك. وفي ٤ سبتمبر ٢٠٢٦ كان يعرض خمس وظائف كلها في الخبر بالسعودية، ولا شيء في البحرين."}},
  {g:"corp", url:"https://gpiccareer.gpic.com/",
   n:{en:"GPIC", ar:"الخليج لصناعة البتروكيماويات"},
   d:{en:"Industrial and technical roles. Usually a talent pool to register in rather than named vacancies.",
@@ -1119,8 +1122,8 @@ const SOURCES = [
      ar:"وظائف الحوض الجاف والوظائف الفنية. ولا توجد قائمة شواغر: أرسل سيرتك الذاتية إلى العنوان المذكور في الصفحة."}},
  {g:"corp", url:"https://careers.albasmelter.com/",
   n:{en:"Alba, Aluminium Bahrain", ar:"ألبا، ألمنيوم البحرين"},
-  d:{en:"One of the largest employers in the country: industrial, engineering and technical roles.",
-     ar:"من أكبر أرباب العمل في البلاد: وظائف صناعية وهندسية وفنية."}},
+  d:{en:"One of the largest employers in the country: industrial, engineering and technical roles. The portal showed no records on 4 September 2026.",
+     ar:"من أكبر أرباب العمل في البلاد: وظائف صناعية وهندسية وفنية. ولم تعرض البوابة أي سجلات في ٤ سبتمبر ٢٠٢٦."}},
  {g:"corp", url:"https://silah.bh/careers/",
   n:{en:"Silah Gulf", ar:"صلة الخليج"},
   d:{en:"Contact-centre roles, suitable for first jobs.", ar:"وظائف مراكز الاتصال، مناسبة لأول وظيفة."}},
@@ -1139,7 +1142,43 @@ const SOURCES = [
   d:{en:"Listings gathered from many sources.", ar:"وظائف مجمعة من مصادر عدة."}},
  {g:"port", url:"https://www.gulftalent.com/bahrain/jobs",
   n:{en:"GulfTalent", ar:"غلف تالنت"},
-  d:{en:"Professional roles, opening on the Bahrain listings.", ar:"وظائف مهنية، ويفتح على قائمة البحرين."}}
+  d:{en:"Professional roles, opening on the Bahrain listings.", ar:"وظائف مهنية، ويفتح على قائمة البحرين."}},
+ {g:"gcc", url:"https://careers.aramco.com/saudi/search/?createNewAlert=false&q=&locationsearch=",
+  n:{en:"Saudi Aramco, Saudi Arabia", ar:"أرامكو السعودية، السعودية"},
+  d:{en:"Eight standing application routes by field and experience, for graduates and experienced hires, rather than named vacancies. The site is headed For Saudi applicants and prints no nationality rule.",
+     ar:"ثمانية مسارات تقديم دائمة بحسب المجال والخبرة، للخريجين وذوي الخبرة، لا شواغر مسماة. والموقع معنون للمتقدمين السعوديين ولا يطبع شرط جنسية."}},
+ {g:"gcc", url:"https://www.emiratesgroupcareers.com/search-and-apply/",
+  n:{en:"Emirates Group, UAE", ar:"مجموعة طيران الإمارات، الإمارات"},
+  d:{en:"84 open positions on 4 September 2026, 59 of them in the UAE, most with a closing date. Roles marked Emiratisation are for UAE nationals.",
+     ar:"٨٤ وظيفة مفتوحة في ٤ سبتمبر ٢٠٢٦، منها ٥٩ في الإمارات، ولمعظمها موعد إغلاق. والوظائف الموسومة بالتوطين لمواطني الإمارات."}},
+ {g:"gcc", url:"https://careers.smartrecruiters.com/EtihadAirways5",
+  n:{en:"Etihad Airways, UAE", ar:"الاتحاد للطيران، الإمارات"},
+  d:{en:"48 vacancies in Abu Dhabi on 4 September 2026, from cabin crew to finance. Some are marked UAE Nationals Only.",
+     ar:"٤٨ وظيفة في أبوظبي في ٤ سبتمبر ٢٠٢٦، من طاقم الضيافة إلى المالية. وبعضها موسوم لمواطني الإمارات فقط."}},
+ {g:"gcc", url:"https://jobs.adnoc.ae/us/en/search-results",
+  n:{en:"ADNOC Group, UAE", ar:"مجموعة أدنوك، الإمارات"},
+  d:{en:"63 postings on 4 September 2026 across engineering, finance and operations. The graduate trainee programmes are marked UAE Nationals.",
+     ar:"٦٣ إعلانًا في ٤ سبتمبر ٢٠٢٦ في الهندسة والمالية والعمليات. وبرامج تدريب الخريجين موسومة لمواطني الإمارات."}},
+ {g:"gcc", url:"https://careers.qatarairways.com/global/SearchJobs",
+  n:{en:"Qatar Airways, Qatar", ar:"الخطوط الجوية القطرية، قطر"},
+  d:{en:"175 vacancies on 4 September 2026, 123 of them based in Doha, each with a closing date.",
+     ar:"١٧٥ وظيفة في ٤ سبتمبر ٢٠٢٦، منها ١٢٣ مقرها الدوحة، ولكل منها موعد إغلاق."}},
+ {g:"gcc", url:"https://careerportal.qatarenergy.qa/experienced-talent/jobs",
+  n:{en:"QatarEnergy, Qatar", ar:"قطر للطاقة، قطر"},
+  d:{en:"226 experienced-hire vacancies in Qatar on 4 September 2026, from operators to engineers. Qatari nationals have a separate track on the same portal.",
+     ar:"٢٢٦ وظيفة لذوي الخبرة في قطر في ٤ سبتمبر ٢٠٢٦، من المشغّلين إلى المهندسين. وللمواطنين القطريين مسار مستقل في البوابة نفسها."}},
+ {g:"gcc", url:"https://careers.zain.com/?opr=7670&pg=0",
+  n:{en:"Zain Kuwait, Kuwait", ar:"زين الكويت، الكويت"},
+  d:{en:"Three vacancies on 4 September 2026 on the same Zain portal that carries the Bahrain roles.",
+     ar:"ثلاث وظائف في ٤ سبتمبر ٢٠٢٦ على بوابة زين نفسها التي تحمل وظائف البحرين."}},
+ {g:"gcc", url:"https://careers.nbk.com/",
+  n:{en:"National Bank of Kuwait, Kuwait", ar:"بنك الكويت الوطني، الكويت"},
+  d:{en:"The bank's recruitment system asks you to register before it shows vacancies. Its NBK Academy programme is for Kuwaiti graduates.",
+     ar:"يطلب نظام التوظيف في البنك التسجيل قبل عرض الشواغر. وبرنامج أكاديمية البنك لخريجي الكويت."}},
+ {g:"gcc", url:"https://www.gulftalent.com/jobs",
+  n:{en:"GulfTalent, all six countries", ar:"غلف تالنت، الدول الست"},
+  d:{en:"Professional roles across the Gulf with a count by country on the page. On 4 September 2026 it showed 14,826 in the UAE, 6,203 in Saudi Arabia, 2,691 in Qatar and 799 in Kuwait; Oman and Bahrain are in the country menu.",
+     ar:"وظائف مهنية في الخليج مع عدد لكل دولة على الصفحة. وفي ٤ سبتمبر ٢٠٢٦ عرضت ١٤٬٨٢٦ في الإمارات و٦٬٢٠٣ في السعودية و٢٬٦٩١ في قطر و٧٩٩ في الكويت، وعُمان والبحرين في قائمة الدول."}}
 ];
 
 const T = {
@@ -1170,8 +1209,8 @@ en:{
   applyUs:"Apply by email", more:"More details",
   checked:(d)=>"Checked "+d,
   jH:"Full-time vacancies, at the official sources",
-  jP:"This board carries gigs and short work. Full-time vacancies are published at the sources below: the government platforms, the universities, and the big employers' own careers pages. Every link opens the official page.",
-  jChk:"Every link below was opened and checked on 3 September 2026.",
+  jP:"This board carries gigs and short work. Full-time vacancies are published at the sources below: the government platforms, the universities, the big employers' own careers pages, and the GCC employers that take applications from GCC nationals. Every link opens the official page.",
+  jChk:"Every link below was opened and checked on 4 September 2026.",
   xH:"More free tools",
   xP:"Free tools for work and study, in Arabic and English.",
   xCards:[
@@ -1210,8 +1249,8 @@ ar:{
   applyUs:"قدّم عبر البريد الإلكتروني", more:"تفاصيل أكثر",
   checked:(d)=>"جرى التحقق في "+d,
   jH:"الوظائف الدائمة من مصادرها الرسمية",
-  jP:"هذه اللوحة للأعمال القصيرة. أما الوظائف الدائمة فتُنشر في المصادر أدناه: المنصات الحكومية، والجامعات، وصفحات التوظيف في الشركات الكبرى. كل رابط يفتح الصفحة الرسمية.",
-  jChk:"فُتح كل رابط أدناه وجرى التحقق منه في ٣ سبتمبر ٢٠٢٦.",
+  jP:"هذه اللوحة للأعمال القصيرة. أما الوظائف الدائمة فتُنشر في المصادر أدناه: المنصات الحكومية، والجامعات، وصفحات التوظيف في الشركات الكبرى، وجهات العمل الخليجية التي تقبل طلبات مواطني دول المجلس. كل رابط يفتح الصفحة الرسمية.",
+  jChk:"فُتح كل رابط أدناه وجرى التحقق منه في ٤ سبتمبر ٢٠٢٦.",
   xH:"أدوات مجانية أخرى",
   xP:"أدوات مجانية للعمل والدراسة، بالعربية والإنجليزية.",
   xCards:[
@@ -1300,7 +1339,8 @@ function render(){
     var rows = SOURCES.filter(function(s){ return s.g === gr.k; }).map(function(s){
       return '<a class="srcrow" href="'+s.url+'" target="_blank" rel="noopener"><b>'+s.n[LANG]+'</b><span>'+s.d[LANG]+'</span></a>';
     }).join("");
-    return '<div class="srcgroup"><h3>'+gr[LANG]+'</h3><div class="srcgrid">'+rows+'</div></div>';
+    var note = gr.note ? '<div class="checked">'+gr.note[LANG]+'</div>' : '';
+    return '<div class="srcgroup"><h3>'+gr[LANG]+'</h3>'+note+'<div class="srcgrid">'+rows+'</div></div>';
   }).join("");
   document.getElementById("x-h").textContent = t.xH;
   document.getElementById("x-p").textContent = t.xP;

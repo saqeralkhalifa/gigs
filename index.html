@@ -982,6 +982,7 @@ html[lang="ar"] .wpbrand{margin-right:0;margin-left:auto;}
     <p id="s-p"></p>
     <a class="btn apply" id="s-btn" href="https://saqeralkhalifa.com/find-work/" target="_blank" rel="noopener"></a>
     <p class="orline"><a id="s-cv" href="https://internships.saqeralkhalifa.com/cv.html" target="_blank" rel="noopener"></a></p>
+    <p class="orline"><a id="s-alert" href="https://saqeralkhalifa.com/alerts/" target="_blank" rel="noopener"></a></p>
   </div>
 </div>
 
@@ -1199,6 +1200,7 @@ en:{
   sP:"Register your details, the kind of work that suits you, and your availability. When a suitable opportunity is posted, you will be contacted. Registration is free and your details are not shared without your consent.",
   sBtn:"Register your details",
   sCv:"Need a CV? Use the free CV builder.",
+  sAlert:"Get the weekly deadline alerts by email: internships, scholarships and graduate programmes, each one with its source and the date it was checked.",
   tyLabel:"Type of work", seLabel:"Sector",
   count:(n,t)=> n===t ? ("Showing all "+n+" gigs") : ("Showing "+n+" of "+t+" gigs"),
   none:"Nothing matches those filters yet. Try widening one of them.",
@@ -1239,6 +1241,7 @@ ar:{
   sP:"سجّل بياناتك ونوع العمل الذي يناسبك وأوقات تفرغك. وعند نشر فرصة مناسبة سيجري التواصل معك. التسجيل مجاني، ولا تُشارك بياناتك دون موافقتك.",
   sBtn:"سجّل بياناتك",
   sCv:"تحتاج سيرة ذاتية؟ استخدم أداة السيرة الذاتية المجانية.",
+  sAlert:"تصلك تنبيهات المواعيد أسبوعيًا بالبريد: فرص التدريب والمنح وبرامج الخريجين، مع ذكر المصدر وتاريخ التحقق من كل فرصة.",
   tyLabel:"نوع العمل", seLabel:"القطاع",
   count:(n,t)=> n===t ? ("تُعرض كل الفرص، وعددها "+n) : ("تُعرض "+n+" فرصة من أصل "+t),
   none:"لا شيء يطابق هذه المرشّحات بعد. جرّب توسيع أحدها.",
@@ -1328,6 +1331,7 @@ function render(){
   document.getElementById("s-p").textContent = t.sP;
   document.getElementById("s-btn").textContent = t.sBtn;
   document.getElementById("s-cv").textContent = t.sCv;
+  document.getElementById("s-alert").textContent = t.sAlert;
   document.getElementById("t-tylabel").textContent = t.tyLabel;
   document.getElementById("t-selabel").textContent = t.seLabel;
   document.getElementById("f-h").textContent = t.fH;
@@ -1388,6 +1392,7 @@ document.addEventListener("click", function(e){
   if(e.target.closest("#p-mail")) gc("gg-post-mail", "Company mailto opened");
   if(e.target.closest("#s-btn")) gc("gg-seek", "Seeker form opened");
   if(e.target.closest("#s-cv")) gc("gg-cv", "CV builder opened");
+  if(e.target.closest("#s-alert")) gc("gg-alert", "Deadline alerts opened");
   if(e.target.closest(".btn.apply.mail") && e.target.closest(".opp")) gc("gg-apply", "Application email opened");
   if(e.target.closest(".olink")) gc("gg-out", "Outbound to employer");
   if(e.target.closest(".srcrow")) gc("gg-jobs-out", "Outbound to vacancy source");

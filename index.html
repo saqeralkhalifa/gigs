@@ -612,6 +612,26 @@ html, body{overflow-x:hidden;}
 [dir="rtl"] .ml{letter-spacing:0; font-size:.8rem;}
 .checked{margin-top:10px; font-size:.85rem; color:var(--ink-3);}
 
+.soon{margin:26px 0 8px; padding:24px 26px; background:var(--card); border:1px solid var(--line);}
+.soon h2{font-size:1.42rem; margin-bottom:6px;}
+.soon p.sub{font-size:.96rem; color:var(--body); margin-bottom:14px; line-height:1.8;}
+.soon table{width:100%;}
+.soon td{color:var(--body); line-height:1.6;}
+.soon td b{color:var(--ink); font-weight:600;}
+.soon td a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line-2);}
+.soon td a:hover{color:var(--accent); border-color:var(--accent);}
+.soon td small{display:block; color:var(--ink-3); font-size:.84rem; line-height:1.6; margin-top:3px;}
+.soon .chk{font-size:.85rem; color:var(--ink-3); margin-top:12px; line-height:1.7;}
+@media(max-width:640px){
+  .soon{padding:18px 16px;}
+  .soon table, .soon tbody, .soon tr, .soon td{display:block; width:100%;}
+  .soon thead{display:none;}
+  .soon tr{border:1px solid var(--line); background:var(--paper); padding:12px 14px 14px; margin-bottom:10px;}
+  .soon td{border:0; padding:2px 0; font-size:15px;}
+  .soon td::before{content:attr(data-l); display:block; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); font-weight:600; margin-top:8px;}
+  [dir="rtl"] .soon td::before{letter-spacing:0; text-transform:none; font-size:12px;}
+  .soon td:first-child::before{display:none;}
+}
 .srcdir{margin-top:46px; padding:26px; background:var(--card); border:1px solid var(--line);}
 .srcdir h2{font-size:1.42rem; margin-bottom:6px;}
 .srcdir p.sub{font-size:.96rem; color:var(--body); margin-bottom:6px; line-height:1.8;}
@@ -961,6 +981,13 @@ html[lang="ar"] .wpbrand{margin-right:0;margin-left:auto;}
   <p class="sub" id="t-sub"></p>
 </div>
 
+<div class="soon" id="soon">
+  <h2 id="n-h"></h2>
+  <p class="sub" id="n-p"></p>
+  <table id="n-table"></table>
+  <p class="chk" id="n-chk"></p>
+</div>
+
 <div class="how">
   <h2 id="h-h"></h2>
   <div class="steps">
@@ -1074,7 +1101,7 @@ const SOURCES = [
      ar:"منصة المواهب من تمكين، وتميل إلى الوظائف التقنية والرقمية. وفي ١٠ سبتمبر ٢٠٢٦ أدرجت عشرة إعلانات، اثنان منها أُضيفا في ٨ سبتمبر، وتعرض القائمة تاريخ النشر لا تاريخ الإغلاق."}},
  {g:"uni", url:"https://recruitment.uob.edu.bh/",
   n:{en:"University of Bahrain", ar:"جامعة البحرين"},
-  d:{en:"The university's recruitment portal. On 4 September 2026 it said there are no vacancies at the moment.", ar:"بوابة التوظيف الرسمية للجامعة. وفي ٤ سبتمبر ٢٠٢٦ كانت تقول إنه لا توجد شواغر في الوقت الحالي."}},
+  d:{en:"The university's recruitment portal. On 21 September 2026 it listed two academic posts in the Department of Allied Health Sciences, a lecturer and an instructor, both closing 28 September 2026.", ar:"بوابة التوظيف الرسمية للجامعة. وفي ٢١ سبتمبر ٢٠٢٦ أدرجت وظيفتين أكاديميتين في قسم العلوم الصحية المساندة، محاضرًا ومدرّسًا، وتغلق كلتاهما في ٢٨ سبتمبر ٢٠٢٦."}},
  {g:"uni", url:"https://www.polytechnic.bh/careers/",
   n:{en:"Bahrain Polytechnic", ar:"بوليتكنك البحرين"},
   d:{en:"The Polytechnic's careers page. Its separate recruitment portal has been suspended, and on 4 September 2026 the page said there are currently no vacancies.", ar:"صفحة التوظيف في البوليتكنك. أما بوابة التوظيف المستقلة فقد أُوقفت، وفي ٤ سبتمبر ٢٠٢٦ كانت الصفحة تقول إنه لا توجد شواغر حاليًا."}},
@@ -1182,11 +1209,78 @@ const SOURCES = [
      ar:"وظائف مهنية في الخليج مع عدد لكل دولة على الصفحة. وفي ٤ سبتمبر ٢٠٢٦ عرضت ١٤٬٨٢٦ في الإمارات و٦٬٢٠٣ في السعودية و٢٬٦٩١ في قطر و٧٩٩ في الكويت، وعُمان والبحرين في قائمة الدول."}}
 ];
 
+const CTN = {bh:{en:"Bahrain",ar:"البحرين"}, sa:{en:"Saudi Arabia",ar:"السعودية"}, qa:{en:"Qatar",ar:"قطر"}, ae:{en:"UAE",ar:"الإمارات"}, om:{en:"Oman",ar:"عُمان"}, kw:{en:"Kuwait",ar:"الكويت"}};
+const SOON = [
+ {ct:"qa", url:"https://internships.qf.org.qa/",
+  org:{en:"Qatar Foundation", ar:"مؤسسة قطر"},
+  what:{en:"Administrative Assistant with Arabic support, under the Mehnaty programme", ar:"مساعد إداري بدعم اللغة العربية، ضمن برنامج مهنتي"},
+  who:{en:"The portal prints a GPA floor of 2.5 for Mehnaty and adds that students on scholarships must check that the scholarship permits work.", ar:"تطبع البوابة حدًا أدنى للمعدل قدره ٢٫٥ لبرنامج مهنتي، وتضيف أن على الطلبة المبتعثين التأكد من أن البعثة تسمح بالعمل."},
+  when:{en:"Closes 24 September 2026", ar:"يغلق في ٢٤ سبتمبر ٢٠٢٦"},
+  chk:{en:"Checked 21 September 2026", ar:"جرى التحقق في ٢١ سبتمبر ٢٠٢٦"}},
+ {ct:"bh", url:"https://recruitment.uob.edu.bh/",
+  org:{en:"University of Bahrain", ar:"جامعة البحرين"},
+  what:{en:"Lecturer and Instructor, Department of Allied Health Sciences, two academic posts", ar:"محاضر ومدرّس في قسم العلوم الصحية المساندة، وظيفتان أكاديميتان"},
+  who:{en:"Bahraini citizens with a bachelor degree in pharmacy and a master degree in a relevant pharmaceutical field, for the 2026/2027 academic year.", ar:"المواطنون البحرينيون الحاصلون على بكالوريوس في الصيدلة وماجستير في مجال صيدلاني ذي صلة، للعام الدراسي ٢٠٢٦‏/٢٠٢٧."},
+  when:{en:"Closes 28 September 2026", ar:"يغلق في ٢٨ سبتمبر ٢٠٢٦"},
+  chk:{en:"Checked 21 September 2026", ar:"جرى التحقق في ٢١ سبتمبر ٢٠٢٦"}},
+ {ct:"bh", url:"https://silah.bh/careers/",
+  org:{en:"Silah Gulf", ar:"صلة الخليج"},
+  what:{en:"Graduate Trainee Programme, one year", ar:"برنامج تدريب الخريجين، سنة واحدة"},
+  who:{en:"Bahraini university graduates. The form asks for a CV, a CPR copy, your university GPA and graduation date, and a 1,000 word essay in PDF.", ar:"خريجو الجامعات البحرينيون. ويطلب النموذج سيرة ذاتية ونسخة من البطاقة الذكية والمعدل وتاريخ التخرج ومقالًا من ١٠٠٠ كلمة بصيغة بي دي إف."},
+  when:{en:"July to September every year. The page names the months and no closing day, so September is the last month it names.", ar:"من يوليو إلى سبتمبر كل عام. وتذكر الصفحة الأشهر دون يوم للإغلاق، فسبتمبر آخر شهر تذكره."},
+  chk:{en:"Checked 21 September 2026", ar:"جرى التحقق في ٢١ سبتمبر ٢٠٢٦"}},
+ {ct:"sa", url:"https://www.ssa.gov.sa/spaceacademyen/",
+  org:{en:"Saudi Space Agency", ar:"وكالة الفضاء السعودية"},
+  what:{en:"Space Academy sessions, each announced with its own registration link", ar:"جلسات أكاديمية الفضاء، ويُعلن عن كل جلسة برابط تسجيل خاص بها"},
+  who:{en:"Set per programme. The page says eligibility is specified in each programme announcement, and that programmes are free of charge unless the announcement says otherwise.", ar:"تُحدَّد لكل برنامج. وتذكر الصفحة أن شروط الأهلية تُحدَّد في إعلان كل برنامج، وأن البرامج بلا رسوم ما لم يذكر الإعلان خلاف ذلك."},
+  when:{en:"Next printed sessions 6 and 7 October. The page prints the day and the month without a year.", ar:"الجلسات التالية المطبوعة في ٦ و٧ أكتوبر. وتطبع الصفحة اليوم والشهر دون سنة."},
+  chk:{en:"Checked 21 September 2026", ar:"جرى التحقق في ٢١ سبتمبر ٢٠٢٦"}},
+ {ct:"sa", url:"https://www.bain.com/careers/work-with-us/internships-programs/mustaqbalak-consulting-coop/",
+  org:{en:"Bain and Company, Riyadh", ar:"بين وشركاه، الرياض"},
+  what:{en:"Mustaqbalak Consulting Coop, four to seven months, with a monthly salary and health insurance", ar:"برنامج مستقبلك للتدريب التعاوني، من أربعة إلى سبعة أشهر، براتب شهري وتأمين صحي"},
+  who:{en:"Saudi nationals currently enrolled at schools inside the Kingdom who must complete coop training before graduation. Saudis studying abroad are directed to the summer internship instead.", ar:"المواطنون السعوديون المقيدون حاليًا في مؤسسات تعليمية داخل المملكة ممن يشترط عليهم تدريب تعاوني قبل التخرج. أما الدارسون في الخارج فتوجّههم الصفحة إلى التدريب الصيفي."},
+  when:{en:"Closes 10 October 2026 for the January to March 2027 start dates", ar:"يغلق في ١٠ أكتوبر ٢٠٢٦ لمواعيد البدء من يناير إلى مارس ٢٠٢٧"},
+  chk:{en:"Checked 21 September 2026", ar:"جرى التحقق في ٢١ سبتمبر ٢٠٢٦"}},
+ {ct:"sa", url:"https://careers.aoshearman.com/en/saudi-arabia-coop-program",
+  org:{en:"A and O Shearman", ar:"إيه آند أو شيرمان"},
+  what:{en:"Saudi Cooperative Training Programme, law. The page carries a live Apply now control to the Winter 2026 posting.", ar:"برنامج التدريب التعاوني في السعودية، قانون. وتحمل الصفحة زر تقديم فعالًا إلى إعلان شتاء ٢٠٢٦."},
+  who:{en:"Fluent Arabic with business English. The page prints no nationality rule.", ar:"إجادة العربية مع إنجليزية الأعمال. ولا تطبع الصفحة أي شرط جنسية."},
+  when:{en:"Window September 2026 to November 2026, with interviews on a rolling basis through November and December", ar:"الفترة من سبتمبر ٢٠٢٦ إلى نوفمبر ٢٠٢٦، والمقابلات تباعًا خلال نوفمبر وديسمبر"},
+  chk:{en:"Checked 21 September 2026", ar:"جرى التحقق في ٢١ سبتمبر ٢٠٢٦"}},
+ {ct:"qa", url:"https://www.hamad.qa/EN/Education-and-research/Medical-Education/Internship%20Program/Pages/default.aspx",
+  org:{en:"Hamad Medical Corporation", ar:"مؤسسة حمد الطبية"},
+  what:{en:"Medical Internship Programme, the January intake", ar:"برنامج الامتياز الطبي، دفعة يناير"},
+  who:{en:"Doctors who graduated within the past five years, holding Qatari citizenship, GCC citizenship or a Qatar residency permit under first degree family sponsorship only, with a clinical exam score and an English test.", ar:"الأطباء الذين تخرجوا خلال السنوات الخمس الماضية، بجنسية قطرية أو خليجية أو إقامة قطرية بكفالة عائلية من الدرجة الأولى فقط، مع درجة في اختبار سريري واختبار إنجليزية."},
+  when:{en:"Applications close 15 November for the 1 January start. The page prints these dates without a year.", ar:"يغلق التقديم في ١٥ نوفمبر لبداية ١ يناير. وتطبع الصفحة هذه التواريخ دون سنة."},
+  chk:{en:"Checked 21 September 2026", ar:"جرى التحقق في ٢١ سبتمبر ٢٠٢٦"}},
+ {ct:"qa", url:"https://www.qatarairways.com/en/nationalisation/graduates-development-programme.html",
+  org:{en:"Qatar Airways", ar:"الخطوط الجوية القطرية"},
+  what:{en:"Graduate Development Programme, eight streams", ar:"برنامج تطوير الخريجين، ثمانية مسارات"},
+  who:{en:"Qatari nationals or those with a Qatari mother, aged 20 to 28, with a bachelor degree approved by the Supreme Education Council and a GPA of 2.5 or above. Criminal identification and medical clearance are required.", ar:"المواطنون القطريون أو أبناء الأم القطرية بين ٢٠ و٢٨ عامًا، بدرجة بكالوريوس معتمدة من المجلس الأعلى للتعليم ومعدل ٢٫٥ فأعلى. ويُشترط التحقق الأمني واللياقة الطبية."},
+  when:{en:"Applications remain open throughout the year. The page prints that the next recruitment cycle begins in November 2026.", ar:"يبقى التقديم مفتوحًا طوال العام. وتطبع الصفحة أن دورة التوظيف التالية تبدأ في نوفمبر ٢٠٢٦."},
+  chk:{en:"Checked 21 September 2026", ar:"جرى التحقق في ٢١ سبتمبر ٢٠٢٦"}},
+ {ct:"bh", url:"https://www.kpmg.com/bh/en/careers/hussain-kasim-internship.html",
+  org:{en:"KPMG in Bahrain", ar:"كي بي إم جي في البحرين"},
+  what:{en:"Hussain Kasim Internship Programme, across audit, tax and advisory", ar:"برنامج حسين قاسم للتدريب، في التدقيق والضرائب والاستشارات"},
+  who:{en:"Bahraini students from universities inside and outside the Kingdom of Bahrain. Apply by email with the subject line Hussain Kasim Internship Program.", ar:"الطلبة البحرينيون من جامعات داخل مملكة البحرين وخارجها. والتقديم بالبريد الإلكتروني بعنوان برنامج حسين قاسم للتدريب."},
+  when:{en:"No closing date printed", ar:"لا تطبع الصفحة موعد إغلاق"},
+  chk:{en:"Checked 21 September 2026", ar:"جرى التحقق في ٢١ سبتمبر ٢٠٢٦"}},
+ {ct:"bh", url:"https://www.bahrainfintechbay.com/careers",
+  org:{en:"Bahrain FinTech Bay", ar:"خليج البحرين للتكنولوجيا المالية"},
+  what:{en:"Two intern roles listed, Acceleration Intern and Business Development Intern", ar:"وظيفتا تدريب مدرجتان، متدرب في التسريع ومتدرب في تطوير الأعمال"},
+  who:{en:"The page prints no eligibility rule and no nationality rule. Applications go through the public careers portal.", ar:"لا تطبع الصفحة شرط أهلية ولا شرط جنسية. ويجري التقديم عبر بوابة التوظيف العامة."},
+  when:{en:"No closing date printed", ar:"لا تطبع الصفحة موعد إغلاق"},
+  chk:{en:"Checked 21 September 2026", ar:"جرى التحقق في ٢١ سبتمبر ٢٠٢٦"}}
+];
 const T = {
 en:{
   kicker:"Bahrain · Free to post · Free to apply",
   title:"Gigs and short-term work in Bahrain",
   sub:"A free noticeboard for short jobs in Bahrain: gigs and temporary project work from half a day to a month or more, part-time roles and freelance tasks. Posting is free, applying is free, and every listing is reviewed before it is published.",
+  nH:"Hiring now, with closing dates",
+  nP:"A summary of what is open right now across the six countries, drawn from the full-time sources further down this page and from the internships directory. Each employer name opens the employer's own page.",
+  nCols:["Employer","Opportunity","Country","Closing date"],
+  nChk:"Every row was checked on the employer's own page on the date shown. Where a page prints months rather than a day, the months are given. Where a page prints no closing date, none is claimed here.",
   hH:"How it works",
   h1:"The company sends the opportunity through the form or by email.",
   h2:"The listing is reviewed with the company and published, normally within one working day.",
@@ -1228,6 +1322,10 @@ ar:{
   kicker:"البحرين · النشر مجاني · التقديم مجاني",
   title:"أعمال قصيرة وفرص عمل مرنة في البحرين",
   sub:"لوحة مجانية للأعمال القصيرة في البحرين: مهام قصيرة وأعمال مشاريع مؤقتة من نصف يوم إلى شهر أو أكثر، إضافة إلى الدوام الجزئي والعمل الحر. النشر مجاني، والتقديم مجاني، وكل إعلان يُراجع قبل نشره.",
+  nH:"يستقبلون الطلبات الآن، مع مواعيد الإغلاق",
+  nP:"ملخص لما هو مفتوح الآن في الدول الست، من مصادر الوظائف الدائمة في أسفل هذه الصفحة ومن دليل فرص التدريب. واسم كل جهة يفتح صفحتها هي.",
+  nCols:["الجهة","الفرصة","الدولة","موعد الإغلاق"],
+  nChk:"جرى التحقق من كل سطر في صفحة الجهة نفسها في التاريخ المذكور. وحيث تذكر الصفحة الأشهر دون يوم محدد ذُكرت الأشهر، وحيث لا تذكر موعد إغلاق لا نزعم موعدًا هنا.",
   hH:"كيف تعمل اللوحة",
   h1:"ترسل الشركة الفرصة عبر النموذج أو بالبريد الإلكتروني.",
   h2:"يُراجع الإعلان مع الشركة ثم يُنشر، خلال يوم عمل واحد عادة.",
@@ -1318,6 +1416,19 @@ function chips(el, list, cur, attr){
 function render(){
   var t = T[LANG];
   ["kicker","title","sub"].forEach(function(k){ document.getElementById("t-"+k).textContent = t[k]; });
+  document.getElementById("n-h").textContent = t.nH;
+  document.getElementById("n-p").textContent = t.nP;
+  document.getElementById("n-chk").textContent = t.nChk;
+  document.getElementById("n-table").innerHTML =
+    '<thead><tr>'+t.nCols.map(function(c){ return '<th>'+c+'</th>'; }).join("")+'</tr></thead><tbody>'+
+    SOON.map(function(r){
+      return '<tr>'+
+        '<td data-l="'+t.nCols[0]+'"><b><a class="soonrow" href="'+r.url+'" target="_blank" rel="noopener">'+r.org[LANG]+'</a></b></td>'+
+        '<td data-l="'+t.nCols[1]+'">'+r.what[LANG]+'<small>'+r.who[LANG]+'</small></td>'+
+        '<td data-l="'+t.nCols[2]+'">'+CTN[r.ct][LANG]+'</td>'+
+        '<td data-l="'+t.nCols[3]+'"><b>'+r.when[LANG]+'</b><small>'+r.chk[LANG]+'</small></td>'+
+      '</tr>';
+    }).join("")+'</tbody>';
   document.getElementById("h-h").textContent = t.hH;
   document.getElementById("h-1").textContent = t.h1;
   document.getElementById("h-2").textContent = t.h2;
@@ -1396,6 +1507,7 @@ document.addEventListener("click", function(e){
   if(e.target.closest(".btn.apply.mail") && e.target.closest(".opp")) gc("gg-apply", "Application email opened");
   if(e.target.closest(".olink")) gc("gg-out", "Outbound to employer");
   if(e.target.closest(".srcrow")) gc("gg-jobs-out", "Outbound to vacancy source");
+  if(e.target.closest(".soonrow")) gc("gg-soon-out", "Outbound from closing dates table");
   if(e.target.closest(".crosscard")) gc("gg-cross", "Across to family site");
 });
 

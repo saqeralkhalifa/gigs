@@ -1537,7 +1537,7 @@ en:{
   dPay:"Pay", dTime:"Hours and duration", dLoc:"Location", dDead:"Apply by",
   payAsk:"Pay not stated", filled:"Filled",
   applyUs:"Apply by email", more:"More details",
-  checked:(d)=>"Checked "+d,
+  checked:(d)=>"Checked "+fmtDate(d,"en"),
   jH:"Full-time vacancies, at the official sources",
   jP:"This board carries gigs and short work. Full-time vacancies are published at the sources below: the government platforms, the universities and the big employers' own careers pages in Bahrain, then employers' careers pages in Saudi Arabia, the UAE, Qatar, Kuwait and Oman. Every link opens the official page.",
   jChk:"Every source on this list was opened on 26 November 2026, and a date inside a description is the date that page was read.",
@@ -1575,14 +1575,14 @@ ar:{
   sCv:"تحتاج سيرة ذاتية؟ استخدم أداة السيرة الذاتية المجانية.",
   sAlert:"تصلك تنبيهات المواعيد أسبوعيًا بالبريد: فرص التدريب والمنح وبرامج الخريجين، مع ذكر المصدر وتاريخ التحقق من كل فرصة.",
   tyLabel:"نوع العمل", seLabel:"القطاع",
-  count:(n,t)=> n===t ? ("تُعرض كل الفرص، وعددها "+n) : ("تُعرض "+n+" فرصة من أصل "+t),
+  count:(n,t)=> n===t ? ("تُعرض كل الفرص، وعددها "+arNum(n)) : ("تُعرض "+arCount(n,"فرصة واحدة","فرصتان","فرص","فرصة")+" من أصل "+arNum(t)),
   none:"لا شيء يطابق هذه المرشّحات بعد. جرّب توسيع أحدها.",
   fH:"اللوحة جديدة.",
   fP:"تُجمع الآن أولى الفرص من الشركات في البحرين. يمكن للشركات نشر فرصة عبر النموذج أعلاه، ويمكن للباحثين عن عمل تسجيل بياناتهم ليجري التواصل معهم عند نشر فرص مناسبة.",
   dPay:"الأجر", dTime:"الساعات والمدة", dLoc:"المكان", dDead:"آخر موعد للتقديم",
   payAsk:"الأجر غير مذكور", filled:"شُغلت",
   applyUs:"قدّم عبر البريد الإلكتروني", more:"تفاصيل أكثر",
-  checked:(d)=>"جرى التحقق في "+d,
+  checked:(d)=>"جرى التحقق في "+fmtDate(d,"ar"),
   jH:"الوظائف الدائمة من مصادرها الرسمية",
   jP:"هذه اللوحة للأعمال القصيرة. أما الوظائف الدائمة فتُنشر في المصادر أدناه: المنصات الحكومية والجامعات وصفحات التوظيف في الشركات الكبرى في البحرين، ثم صفحات التوظيف لدى جهات العمل في السعودية والإمارات وقطر والكويت وعُمان. كل رابط يفتح الصفحة الرسمية.",
   jChk:"فُتحت جميع المصادر في هذه القائمة في ٢٦ نوفمبر ٢٠٢٦، وأي تاريخ داخل الوصف هو تاريخ قراءة تلك الصفحة.",
@@ -1600,6 +1600,73 @@ ar:{
 };
 
 let LANG = "en", TY = "all", SE = "all";
+/* Arabic numerals. Arabic text uses Arabic-Indic digits, except money, phone numbers, web
+   addresses and numbers attached to Latin names, which keep Western digits. arFix applies the
+   same rule to the page as rendered in Arabic, so notes added later match the rest of it. */
+function arNum(x){ return String(x).replace(/[0-9]/g, function(d){ return "٠١٢٣٤٥٦٧٨٩".charAt(+d); }); }
+function arWestern(x){ return String(x).replace(/[٠-٩]/g, function(d){ return String(d.charCodeAt(0) - 1632); }).replace(/٫/g, ".").replace(/٬/g, ",").replace(/٪/g, "%"); }
+function arCount(n, one, two, few, many){
+  if(n === 1) return one;
+  if(n === 2) return two;
+  var r = n % 100;
+  return arNum(n) + " " + (r >= 3 && r <= 10 ? few : many);
+}
+function fmtDate(iso, lang){
+  var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
+  if(!m) return lang === "ar" ? arNum(iso || "") : (iso || "");
+  var ar = ["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
+  var en = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  return lang === "ar" ? arNum(+m[3]) + " " + ar[+m[2] - 1] + " " + arNum(m[1]) : (+m[3]) + " " + en[+m[2] - 1] + " " + m[1];
+}
+function arIsMoney(s, end, depth){
+  var after = s.slice(end, end + 40);
+  if(/^(?:\s*(?:ألف|ألفًا|ألفا|آلاف|مليون|ملايين|مليار|مليارات|تريليون))?\s*(?:دينار|دنانير|ريال|درهم|دراهم|دولار|يورو|جنيه|فلس|ليرة|BHD|BD|SAR|AED|QAR|OMR|KWD|USD|EUR|GBP)/.test(after)) return true;
+  if(depth < 3){
+    var j = /^(?:\s*(?:ألف|ألفًا|ألفا|آلاف|مليون|ملايين|مليار|مليارات|تريليون))?\s*(?:ثم إلى|إلى|أو|حتى|و|-)\s*/.exec(after);
+    if(j){
+      var k = end + j[0].length, n = /^[0-9٠-٩]+(?:[.,٫٬][0-9٠-٩]+)*/.exec(s.slice(k));
+      if(n && arIsMoney(s, k + n[0].length, depth + 1)) return true;
+    }
+  }
+  return false;
+}
+function arToken(s, tok, a){
+  var b = a + tok.length, ca = a, cb = b;
+  while(ca > 0 && !/\s/.test(s.charAt(ca - 1))) ca--;
+  while(cb < s.length && !/\s/.test(s.charAt(cb))) cb++;
+  var chunk = s.slice(ca, cb), digits = arWestern(tok).replace(/\D/g, "");
+  if(/[A-Za-z]/.test(chunk) && /https?:\/\/|www\.|@|\/|\.(?:com|org|net|edu|gov|bh|sa|ae|qa|kw|om)\b/.test(chunk)) return tok;
+  if(digits.length >= 6 || /\+\s?9\d\d\s?$/.test(s.slice(Math.max(0, a - 6), a))) return tok;
+  if(arIsMoney(s, b, 0) || /(?:\$|€|£|US\$|BD|BHD|د\.ب\.?)\s?$/.test(s.slice(Math.max(0, a - 8), a))) return arWestern(tok);
+  if(/[A-Za-z][\s\-\/.*]?$/.test(s.slice(Math.max(0, a - 2), a)) || /^[\s\-]?[A-Za-z+]/.test(s.slice(b, b + 2))) return arWestern(tok);
+  return arNum(tok).replace(/([٠-٩])\.(?=[٠-٩])/g, "$1٫").replace(/([٠-٩]),(?=[٠-٩])/g, "$1٬").replace(/\s?%$/, "٪");
+}
+function arFix(root){
+  if(LANG !== "ar" || !root || !document.createTreeWalker || typeof Map === "undefined") return;
+  var NUM = /[0-9٠-٩]+(?:[.,٫٬][0-9٠-٩]+)*(?:\s?[%٪])?/g;
+  var BLOCK = /^(?:P|DD|DT|LI|TD|TH|H[1-6]|DIV|SECTION|ARTICLE|BLOCKQUOTE|FIGCAPTION|LABEL|BUTTON|SUMMARY|BODY)$/;
+  var walk = document.createTreeWalker(root, 4, null, false), node, blocks = new Map();
+  while((node = walk.nextNode())){
+    if(!/[0-9٠-٩]/.test(node.nodeValue)) continue;
+    var el = node.parentNode;
+    if(!el || (el.closest && el.closest('script,style,textarea,code,pre,[dir="ltr"],[lang="en"]'))) continue;
+    var block = el;
+    while(block && block !== root && !BLOCK.test(block.nodeName)) block = block.parentNode;
+    if(!blocks.has(block)) blocks.set(block, []);
+    blocks.get(block).push(node);
+  }
+  blocks.forEach(function(nodes, blk){
+    var text = "", starts = new Map(), w2 = document.createTreeWalker(blk, 4, null, false), tn;
+    while((tn = w2.nextNode())){ starts.set(tn, text.length); text += tn.nodeValue; }
+    var nAr = (text.match(/[ء-ي]/g) || []).length, nLat = (text.match(/[A-Za-z]/g) || []).length;
+    if(!nAr || nLat > 3 * nAr) return;
+    nodes.forEach(function(t){
+      var off = starts.get(t) || 0, v = t.nodeValue;
+      var out = v.replace(NUM, function(tok, a){ return arToken(text, tok, off + a); });
+      if(out !== v) t.nodeValue = out;
+    });
+  });
+}
 
 function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
 
@@ -1716,6 +1783,7 @@ function render(){
     count.textContent = open.length ? t.count(open.length, GIGS.length) : t.none;
     list.innerHTML = open.map(card).join("");
   }
+  arFix(document.body);
 }
 
 function gc(path, title){
